@@ -1,6 +1,6 @@
 <template>
   <div class="list-toasts">
-    <TransitionGroup name="list" mode="in-out">
+    <TransitionGroup name="list">
       <div
         v-for="(toast, index) in toasts.toastsArray"
         :key="index"
