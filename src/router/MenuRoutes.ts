@@ -62,6 +62,27 @@ const routes: RouteRecordRaw[] = [
     component: () => import('src/views/WelcomeView.vue'),
   },
   {
+    path: 'aircraft',
+    name: 'aircraft',
+    meta: {
+      titleTag: 'menu.aircraft',
+      icon: 'fas fa-plane-up',
+      roles: [ROLES.EDITOR, ROLES.ADMIN],
+    },
+    children: [
+      {
+        path: 'aircraft-classes',
+        name: 'aircraft-classes',
+        meta: {
+          titleTag: 'menu.aircraftClasses',
+          icon: 'fas fa-paper-plane',
+          roles: [ROLES.EDITOR, ROLES.ADMIN],
+        },
+        component: () => import('src/views/aircraft/AircraftClassesView.vue'),
+      },
+    ],
+  },
+  {
     path: 'config',
     name: 'config',
     meta: {

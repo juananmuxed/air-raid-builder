@@ -6,5 +6,7 @@
   "config": "Configuración",
   "lists": "Listas",
   "about": "Sobre",
-  "admin": "Administración"
+  "admin": "Administración",
+  "aircraft": "Aeroplano",
+  "aircraftClasses": "Clases de aeroplanos"
 }

@@ -6,6 +6,7 @@
   "item": "elemento",
   "roles": "rol | roles",
   "users": "usuario | usuarios",
+  "aircraftClasses": "clase de aeronave | clases de aeronave",
   "welcome": "Bienvenido",
   "news": "Novedades"
 }

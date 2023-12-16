@@ -6,6 +6,7 @@
   "item": "item",
   "roles": "role | roles",
   "users": "user | users",
+  "aircraftClasses": "aircraft class | aircraft classes",
   "welcome": "Welcome",
   "news": "News"
 }
