@@ -44,6 +44,18 @@
                   </QSelect>
                 </QItemSection>
               </QItem>
+              <QItem
+                v-close-popup
+                clickable
+                @click="goToWelcome"
+              >
+                <QItemSection avatar>
+                  <QIcon name="fas fa-home" />
+                </QItemSection>
+                <QItemSection>
+                  {{ $t("menu.home") }}
+                </QItemSection>
+              </QItem>
               <QItem clickable @click="$q.dark.toggle">
                 <QItemSection avatar>
                   <QIcon
@@ -145,6 +157,7 @@ import { loadLanguageAsync, availableLocales } from 'src/plugins/I18n';
 import { getMenu } from 'src/router/MenuRoutes';
 import { useUserStore } from 'src/stores/UseUserStore';
 import { LOCAL_STORAGE } from 'src/constants/Keys';
+import { router } from 'src/router/Router';
 
 const $q = useQuasar();
 const user = useUserStore();
@@ -154,6 +167,10 @@ const leftDrawerOpen = ref(false);
 
 function switchDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+
+function goToWelcome() {
+  router.push({ name: 'welcome' });
 }
 
 const langToken = localStorage.getItem(LOCAL_STORAGE.LANG) || 'en';

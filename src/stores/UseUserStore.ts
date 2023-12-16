@@ -108,7 +108,7 @@ export const useUserStore = defineStore('user', () => {
     if (token.value) {
       startRefreshToken();
 
-      await router.push({ path: '/' });
+      await router.push({ path: '/admin/' });
       Notify.create({
         message: t('success.welcome'),
         caption: tokenPayload.value?.username?.toString(),

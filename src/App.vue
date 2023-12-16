@@ -1,9 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <RouterView v-slot="{ Component }">
+  <RouterView v-slot="{ Component, route }">
     <Transition name="fade-fast" mode="out-in">
-      <Component :is="Component" />
+      <div :key="route.fullPath" class="container">
+        <Component :is="Component" />
+      </div>
     </Transition>
   </RouterView>
 </template>

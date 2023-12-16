@@ -1,5 +1,13 @@
 <template>
   <QLayout view="lHh Lpr fff" class="background-gradient">
+    <QBtn
+      color="negative"
+      icon="fas fa-arrow-left"
+      round
+      unelevated
+      class="q-ma-md"
+      :to="{ name: 'welcome' }"
+    />
     <QCard class="absolute-center shadow-18">
       <QCardSection class="bg-teal-2">
         <div class="text-h5">

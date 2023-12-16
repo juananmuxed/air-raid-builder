@@ -3,5 +3,8 @@
   "home": "Home",
   "users": "Users",
   "roles": "Roles",
-  "config": "Configuration"
+  "config": "Configuration",
+  "lists": "Lists",
+  "about": "About",
+  "admin": "Admin"
 }

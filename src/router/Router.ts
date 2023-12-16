@@ -5,13 +5,20 @@ import {
   createWebHistory,
 } from 'vue-router';
 
-import { MenuRoutes } from './MenuRoutes';
+import { MenuPublicRoutes, MenuRoutes } from './MenuRoutes';
 import { useTitle } from 'src/composables/UseTitle';
 import { useUserStore } from 'src/stores/UseUserStore';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
+    component: () => import('src/layouts/PublicMainLayout.vue'),
+    children: [
+      ...MenuPublicRoutes || [],
+    ],
+  },
+  {
+    path: '/admin',
     component: () => import('src/layouts/MainLayout.vue'),
     children: [
       ...MenuRoutes || [],
@@ -51,13 +58,14 @@ router.beforeEach((to, from, next) => {
     title.setTitle(to);
   }, 200);
 
-  const publicPages = ['login'];
+  const publicPages = ['login', 'about', 'welcome', 'configuration', 'lists'];
   const authRequired = !publicPages.includes(to.name?.toString() || '');
 
-  if (!authRequired && user.validToken) next({ name: 'home' });
-
-  if (authRequired && !user.validToken) {
-    next({ name: 'login' });
-  } else if (!user.isValidRole(to.meta.roles)) next({ name: 'home' });
-  else next();
+  if (authRequired) {
+    if (!user.validToken) next({ name: 'login' });
+    else if (user.isValidRole(to.meta.roles)) next();
+    else next({ name: 'home' });
+  } else {
+    next();
+  }
 });

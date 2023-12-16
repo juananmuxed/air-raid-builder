@@ -38,4 +38,11 @@ export default defineConfig({
 
     sassMigratorQuasar(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/assets/scss/main.scss";',
+      },
+    },
+  },
 });

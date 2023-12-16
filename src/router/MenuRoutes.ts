@@ -12,6 +12,45 @@ export type IMenuItem = {
 }
 type Menu = IMenuItem[]
 
+const publicRoutes: RouteRecordRaw[] = [
+  {
+    path: '',
+    name: 'welcome',
+    meta: {
+      titleTag: 'menu.home',
+      icon: 'fas fa-house',
+    },
+    component: () => import('src/views/public/HomeView.vue'),
+  },
+  {
+    path: 'lists',
+    name: 'lists',
+    meta: {
+      titleTag: 'menu.lists',
+      icon: 'fas fa-list',
+    },
+    component: () => import('src/views/public/ListsView.vue'),
+  },
+  {
+    path: 'configuration',
+    name: 'configuration',
+    meta: {
+      titleTag: 'menu.config',
+      icon: 'fas fa-cog',
+    },
+    component: () => import('src/views/public/ConfigView.vue'),
+  },
+  {
+    path: 'about',
+    name: 'about',
+    meta: {
+      titleTag: 'menu.about',
+      icon: 'fas fa-user',
+    },
+    component: () => import('src/views/public/AboutView.vue'),
+  },
+];
+
 const routes: RouteRecordRaw[] = [
   {
     path: '',
@@ -96,6 +135,11 @@ export function getMenu() {
   return routes.filter((route) => !route.meta?.noMenu).map(routeToMenu).filter((route) => route) as Menu;
 }
 
+export function getPublicMenu() {
+  return publicRoutes.filter((route) => !route.meta?.noMenu).map(routeToMenu).filter((route) => route) as Menu;
+}
+
 export {
   routes as MenuRoutes,
+  publicRoutes as MenuPublicRoutes,
 };
