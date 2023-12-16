@@ -1,0 +1,11 @@
+{
+  "id": "Id",
+  "name": "Name",
+  "role": "Role",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "edit": "Edit",
+  "remove": "Remove",
+  "csvFile": "CSV file"
+}

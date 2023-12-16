@@ -1,0 +1,11 @@
+{
+  "webTitle": "Admin API Template",
+  "newItem": "Create {item}",
+  "editItem": "Edit {item}",
+  "deleteItem": "Delete {item}",
+  "item": "item",
+  "roles": "role | roles",
+  "users": "user | users",
+  "welcome": "Welcome",
+  "news": "News"
+}

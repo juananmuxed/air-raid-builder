@@ -1,0 +1,7 @@
+{
+  "correctlyCreated": "Creado correctamente",
+  "correctlyUpdated": "Actualizado correctamente",
+  "correctlyDeleted": "Eliminado correctamente",
+  "confirmDelete": "Estás a punto de eliminar {item} {id}",
+  "rejectFile": "Archivo rechazado: "
+}

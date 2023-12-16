@@ -1,0 +1,15 @@
+{
+  "login": "Acceso",
+  "home": "Inicio",
+  "users": "Usuarios",
+  "roles": "Roles",
+  "config": "Configuración",
+  "expansions": "Expansiones",
+  "weapons": "Armas",
+  "armies": "Ejercitos",
+  "armors": "Armaduras",
+  "traits": "Rasgos",
+  "traitsValues": "Valores de rasgos",
+  "options": "Opciones",
+  "units": "Unidades"
+}

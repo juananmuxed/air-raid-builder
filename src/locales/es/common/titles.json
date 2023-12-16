@@ -1,0 +1,11 @@
+{
+  "webTitle": "Plantilla administración API",
+  "newItem": "Crear {item}",
+  "editItem": "Editar {item}",
+  "deleteItem": "Eliminar {item}",
+  "item": "elemento",
+  "roles": "rol | roles",
+  "users": "usuario | usuarios",
+  "welcome": "Bienvenido",
+  "news": "Novedades"
+}
