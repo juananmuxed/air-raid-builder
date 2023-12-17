@@ -2,6 +2,7 @@
   "id": "Id",
   "name": "Name",
   "role": "Role",
+  "imgUrl": "Image URL",
   "username": "Username",
   "email": "Email",
   "password": "Password",

@@ -7,6 +7,8 @@
   "roles": "rol | roles",
   "users": "usuario | usuarios",
   "aircraftClasses": "clase de aeronave | clases de aeronave",
+  "nations": "nación | naciones",
+  "years": "año | años",
   "welcome": "Bienvenido",
   "news": "Novedades"
 }

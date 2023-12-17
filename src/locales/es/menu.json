@@ -8,5 +8,8 @@
   "about": "Sobre",
   "admin": "Administración",
   "aircraft": "Aeroplano",
-  "aircraftClasses": "Clases de aeroplanos"
+  "aircraftClasses": "Clases de aeroplanos",
+  "manufacturers": "Fabricantes",
+  "nations": "Naciones",
+  "years": "Años"
 }

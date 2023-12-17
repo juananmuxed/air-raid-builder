@@ -83,6 +83,37 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: 'manufacturers',
+    name: 'manufacturers',
+    meta: {
+      titleTag: 'menu.manufacturers',
+      icon: 'fas fa-industry',
+      roles: [ROLES.EDITOR, ROLES.ADMIN],
+    },
+    children: [
+      {
+        path: 'years',
+        name: 'years',
+        meta: {
+          titleTag: 'menu.years',
+          icon: 'fas fa-calendar',
+          roles: [ROLES.EDITOR, ROLES.ADMIN],
+        },
+        component: () => import('src/views/manufacturers/YearsView.vue'),
+      },
+      {
+        path: 'nations',
+        name: 'nations',
+        meta: {
+          titleTag: 'menu.nations',
+          icon: 'fas fa-flag',
+          roles: [ROLES.EDITOR, ROLES.ADMIN],
+        },
+        component: () => import('src/views/manufacturers/NationsView.vue'),
+      },
+    ],
+  },
+  {
     path: 'config',
     name: 'config',
     meta: {
@@ -99,7 +130,7 @@ const routes: RouteRecordRaw[] = [
           icon: 'fas fa-users',
           roles: [ROLES.ADMIN],
         },
-        component: () => import('src/views/users/UsersView.vue'),
+        component: () => import('src/views/config/UsersView.vue'),
       },
       {
         path: 'roles',
@@ -109,7 +140,7 @@ const routes: RouteRecordRaw[] = [
           icon: 'fas fa-scale-balanced',
           roles: [ROLES.ADMIN],
         },
-        component: () => import('src/views/roles/RolesView.vue'),
+        component: () => import('src/views/config/RolesView.vue'),
       },
     ],
   },

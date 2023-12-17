@@ -8,5 +8,8 @@
   "about": "About",
   "admin": "Admin",
   "aircraft": "Aircraft",
-  "aircraftClasses": "Aircraft classes"
+  "aircraftClasses": "Aircraft classes",
+  "manufacturers": "Manufacturers",
+  "nations": "Nations",
+  "years": "Years"
 }
