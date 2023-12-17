@@ -1,7 +1,7 @@
-import { useFetch } from '../fetch/UseFetch';
+import { useFetch } from 'src/composables/fetch/UseFetch';
 import { t } from 'src/plugins/I18n';
-import { useFetchPaginated } from '../fetch/UseFetchPaginated';
-import { useFetchSelect } from '../fetch/UseFetchSelect';
+import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
+import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
 import { AircraftClassesApi } from 'src/services/api/AircraftClasses';
 
 export const useAircraftClasses = () => {
