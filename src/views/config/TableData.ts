@@ -1,16 +1,59 @@
 import { QTableColumn } from 'quasar';
 
-import { User } from 'src/models/api/Users';
+import { Role } from 'src/models/api/Roles';
 import { FormItem } from 'src/models/common/Generics';
+import { User } from 'src/models/api/Users';
 
-import { useRoles } from 'src/composables/client/UseRoles';
 import { useRules } from 'src/composables/UseRules';
 import { t } from 'src/plugins/I18n';
+import { useRoles } from 'src/composables/client/UseRoles';
 
 const rules = useRules();
 const roles = useRoles();
 
-export const columns = [
+export const roleColumns = [
+  {
+    name: 'id',
+    label: t('common.labels.id'),
+    field: 'id',
+    sortable: true,
+    align: 'left',
+  },
+  {
+    name: 'name',
+    label: t('common.labels.name'),
+    field: 'name',
+    sortable: true,
+    align: 'left',
+  },
+  {
+    name: 'options',
+    label: '',
+    align: 'left',
+  },
+] as QTableColumn<Role>[];
+
+export const roleForm: FormItem[] = [
+  {
+    type: 'input',
+    fieldProps: {
+      label: t('common.labels.id'),
+      mask: '##########',
+      rules: [rules.isRequired],
+    },
+    queryName: 'id',
+  },
+  {
+    type: 'input',
+    fieldProps: {
+      label: t('common.labels.name'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'name',
+  },
+];
+
+export const userColumns = [
   {
     name: 'id',
     label: t('common.labels.id'),
