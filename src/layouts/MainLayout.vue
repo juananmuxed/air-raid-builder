@@ -1,10 +1,10 @@
 <template>
   <QLayout view="hHh lpR fFf">
-    <QHeader elevated class="text-white">
+    <QHeader class="text-white">
       <QToolbar>
         <QBtn flat round icon="fas fa-bars" class="q-mr-sm" @click="switchDrawer" />
         <QToolbarTitle>
-          <RouterLink :to="{ name: 'home'}">
+          <RouterLink :to="{ name: 'home'}" class="text-white">
             {{ $t("common.titles.webTitle") }}
           </RouterLink>
         </QToolbarTitle>
@@ -121,7 +121,7 @@
       </RouterView>
     </QPageContainer>
 
-    <QFooter elevated class="text-white">
+    <QFooter class="text-white">
       <QToolbar>
         <QSpace />
         <div>
