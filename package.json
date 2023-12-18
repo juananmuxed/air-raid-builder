@@ -1,7 +1,8 @@
 {
-  "name": "vue-m-template",
+  "name": "air-raid-builder",
   "version": "1.0.0",
-  "repository": "juananmuxed/vue-m-template",
+  "repository": "juananmuxed/air-raid-builder",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "dev:host": "vite --host",
