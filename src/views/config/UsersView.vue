@@ -1,6 +1,6 @@
 <template>
   <GenericViewVue
-    :columns="columns"
+    :columns="userColumns"
     :title="$t('common.titles.users', 2)"
     :dialog-title="$t('common.titles.users', 1)"
   />
@@ -12,7 +12,7 @@ import { User } from 'src/models/api/Users';
 import { useUsers } from 'src/composables/client/UseUsers';
 import { GenericView } from 'src/components/common/GenericView';
 import { GenericViewKey } from 'src/types/Symbols';
-import { userForm, columns } from './TableData';
+import { userForm, userColumns } from './TableData';
 
 const users = useUsers();
 

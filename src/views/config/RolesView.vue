@@ -1,6 +1,6 @@
 <template>
   <GenericViewVue
-    :columns="columns"
+    :columns="roleColumns"
     :title="$t('common.titles.roles', 2)"
     :dialog-title="$t('common.titles.roles', 1)"
   />
@@ -12,7 +12,7 @@ import { Role } from 'src/models/api/Roles';
 import { useRoles } from 'src/composables/client/UseRoles';
 import { GenericView } from 'src/components/common/GenericView';
 import { GenericViewKey } from 'src/types/Symbols';
-import { roleForm, columns } from './TableData';
+import { roleForm, roleColumns } from './TableData';
 
 const roles = useRoles();
 
