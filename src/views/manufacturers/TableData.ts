@@ -75,16 +75,9 @@ export const columnsYears = [
     align: 'left',
   },
   {
-    name: 'name',
-    label: t('common.labels.name'),
-    field: 'name',
-    sortable: true,
-    align: 'left',
-  },
-  {
-    name: 'imgUrl',
-    label: t('common.labels.imgUrl'),
-    field: 'imgUrl',
+    name: 'year',
+    label: t('common.labels.year'),
+    field: 'year',
     sortable: true,
     align: 'left',
   },
@@ -108,17 +101,9 @@ export const yearForm: FormItem[] = [
   {
     type: 'input',
     fieldProps: {
-      label: t('common.labels.name'),
+      label: t('common.labels.year'),
       rules: [rules.isRequired],
     },
-    queryName: 'name',
-  },
-  {
-    type: 'input',
-    fieldProps: {
-      label: t('common.labels.imgUrl'),
-      hint: '',
-    },
-    queryName: 'imgUrl',
+    queryName: 'year',
   },
 ];

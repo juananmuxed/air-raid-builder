@@ -114,6 +114,16 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: 'special-abilities',
+    name: 'special-abilities',
+    meta: {
+      titleTag: 'menu.specialAbilities',
+      icon: 'fas fa-book',
+      roles: [ROLES.EDITOR, ROLES.ADMIN],
+    },
+    component: () => import('src/views/specialAbilities/SpecialAbilitiesView.vue'),
+  },
+  {
     path: 'config',
     name: 'config',
     meta: {
