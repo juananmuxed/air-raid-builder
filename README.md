@@ -1,19 +1,29 @@
-# ✨ Vue3 Template
+# 🌡️ Builder for Air Raid board game
 
 ### Github status
 
-![GitHub issues by-label](https://img.shields.io/github/issues/juananmuxed/vue-m-template/bug?label=Bugs%20Opened&logo=github) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/juananmuxed/vue-m-template?label=Activity&logo=github) ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/juananmuxed/vue-m-template?label=Version&logo=github)
+![GitHub issues by-label](https://img.shields.io/github/issues/juananmuxed/air-raid-builder/bug?label=Bugs%20Opened&logo=github) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/juananmuxed/air-raid-builder?label=Activity&logo=github) ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/juananmuxed/air-raid-builder?label=Version&logo=github)
+
+### Demo deploy status
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/juananmuxed/air-raid-builder/deploy.yml?label=Workflow)
+
+## 🎱 Introduction
+
+> *Fight on and fly on to the last drop of blood and the last drop of fuel, to the last beat of the heart.* <br> - Manfred von Richthofen, The Red Baron
+
+This is a simple builder for board game Air Raid.
 
 ## 🎱 Installation
 
 Clone repo
 ```bash
-git clone https://github.com/juananmuxed/vue-m-template.git
+git clone https://github.com/juananmuxed/air-raid-builder.git
 ```
 Install dependencies
 
 ```bash
-cd vue-m-template
+cd air-raid-builder
 npm i
 ```
 Start developing
@@ -53,7 +63,7 @@ npm run build
 ## 🐛 Report a bug
 
 Please follow one of this links to report a bug:
-- [Github issues](https://github.com/juananmuxed/vue-m-template/issues)
+- [Github issues](https://github.com/juananmuxed/air-raid-builder/issues)
 - [Discord](https://discord.gg/88rzwfU)
 
 ## 📌 Versions
