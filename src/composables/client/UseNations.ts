@@ -2,7 +2,7 @@ import { useFetch } from 'src/composables/fetch/UseFetch';
 import { t } from 'src/plugins/I18n';
 import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
 import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
-import { NationsApi } from 'src/services/api/Nations';
+import { NationsApi } from 'src/services/api/NationsApi';
 
 export const useNations = () => {
   const nationsApi = new NationsApi();

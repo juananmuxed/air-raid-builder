@@ -2,7 +2,7 @@ import { useFetch } from 'src/composables/fetch/UseFetch';
 import { t } from 'src/plugins/I18n';
 import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
 import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
-import { YearsApi } from 'src/services/api/Years';
+import { YearsApi } from 'src/services/api/YearsApi';
 
 export const useYears = () => {
   const yearsApi = new YearsApi();

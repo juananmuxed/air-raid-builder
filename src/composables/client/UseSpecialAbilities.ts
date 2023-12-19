@@ -2,7 +2,7 @@ import { useFetch } from 'src/composables/fetch/UseFetch';
 import { t } from 'src/plugins/I18n';
 import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
 import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
-import { SpecialAbilitiesApi } from 'src/services/api/SpecialAbilities';
+import { SpecialAbilitiesApi } from 'src/services/api/SpecialAbilitiesApi';
 
 export const useSpecialAbilities = () => {
   const specialAbilitiesApi = new SpecialAbilitiesApi();
