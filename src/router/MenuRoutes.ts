@@ -80,6 +80,26 @@ const routes: RouteRecordRaw[] = [
         },
         component: () => import('src/views/aircraft/AircraftClassesView.vue'),
       },
+      {
+        path: 'costs',
+        name: 'costs',
+        meta: {
+          titleTag: 'menu.costs',
+          icon: 'fas fa-coins',
+          roles: [ROLES.EDITOR, ROLES.ADMIN],
+        },
+        component: () => import('src/views/aircraft/CostsView.vue'),
+      },
+      {
+        path: 'stats',
+        name: 'stats',
+        meta: {
+          titleTag: 'menu.stats',
+          icon: 'fas fa-chart-column',
+          roles: [ROLES.EDITOR, ROLES.ADMIN],
+        },
+        component: () => import('src/views/aircraft/StatsView.vue'),
+      },
     ],
   },
   {

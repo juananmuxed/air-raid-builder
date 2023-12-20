@@ -9,6 +9,8 @@
   "aircraftClasses": "aircraft class | aircraft classes",
   "nations": "nation | nations",
   "years": "year | years",
+  "costs": "cost | costs",
+  "stats": "stat | stats",
   "specialAbilities": "special ability | special abilities",
   "welcome": "Welcome",
   "news": "News"
