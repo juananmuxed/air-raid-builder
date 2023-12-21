@@ -1,7 +1,8 @@
 import { Cost } from 'src/models/api/Costs';
+import { Plane } from 'src/models/api/Planes';
 import { Stat } from 'src/models/api/Stats';
 
-export const useFormatStats = () => {
+export const useFormatProperties = () => {
   const setMinMax = (min: number, max: number) => {
     if (min === max) return max.toString();
     return `${min}-${max}`;
@@ -29,17 +30,23 @@ export const useFormatStats = () => {
       setMinMax(stat.speedMinMaximum, stat.speedMaxMaximum)]);
   };
 
- const setStatsLabel = (stat?: Stat) => {
-  if(!stat) return '';
-  return setSeparator([
-    setSpeed(stat),
-    setAgility(stat),
-    stat.firepower,
-    setManeuverRookie(stat),
-    setManeuverRegular(stat),
-    setManeuverVeteran(stat),
-  ], '|')
- }
+  const setStatsLabel = (stat?: Stat) => {
+    if (!stat) return '';
+    return setSeparator([
+      setSpeed(stat),
+      setAgility(stat),
+      stat.firepower,
+      setManeuverRookie(stat),
+      setManeuverRegular(stat),
+      setManeuverVeteran(stat),
+    ], '|');
+  };
+
+  const setCompletePlaneName = (plane?: Plane) => {
+    if (!plane) return '';
+    return `${plane.designation}${plane.nickname ? `"${plane.nickname}"` : ''}`;
+  };
+
   return {
     setCosts,
     setSpeed,
@@ -48,5 +55,6 @@ export const useFormatStats = () => {
     setManeuverRegular,
     setManeuverVeteran,
     setStatsLabel,
+    setCompletePlaneName,
   };
 };

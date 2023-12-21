@@ -4,13 +4,26 @@ import { FormItem } from 'src/models/common/Generics';
 import { AircraftClass } from 'src/models/api/AircraftClasses';
 import { Cost } from 'src/models/api/Costs';
 import { Stat } from 'src/models/api/Stats';
+import { Plane } from 'src/models/api/Planes';
 
 import { useRules } from 'src/composables/UseRules';
 import { t } from 'src/plugins/I18n';
-import { useFormatStats } from 'src/composables/UseFormatStats';
+import { useFormatProperties } from 'src/composables/UseFormatStats';
+import { useNations } from 'src/composables/client/UseNations';
+import { useCosts } from 'src/composables/client/UseCosts';
+import { useAircraftClasses } from 'src/composables/client/UseAircraftClasses';
+import { useStats } from 'src/composables/client/UseStats';
+import { useYears } from 'src/composables/client/UseYears';
+import { useSpecialAbilities } from 'src/composables/client/UseSpecialAbilities';
 
 const rules = useRules();
-const format = useFormatStats();
+const format = useFormatProperties();
+const nations = useNations();
+const costs = useCosts();
+const aircraftClasses = useAircraftClasses();
+const stats = useStats();
+const years = useYears();
+const specialAbilities = useSpecialAbilities();
 
 export const columnsAircraftClasses = [
   {
@@ -263,5 +276,212 @@ export const statForm: FormItem[] = [
       mask: '##',
     },
     queryName: 'maneuverVeteranMaximum',
+  },
+];
+
+export const columnsPlanes = [
+  {
+    name: 'id',
+    label: t('common.labels.id'),
+    field: 'id',
+    sortable: true,
+    align: 'left',
+  },
+  {
+    name: 'name',
+    label: t('common.labels.name'),
+    field: (val) => format.setCompletePlaneName(val),
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'cost',
+    label: t('common.labels.cost'),
+    field: (val) => format.setCosts(val.cost),
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'nation',
+    label: t('common.labels.nation'),
+    field: (val) => val.nation.name,
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'class',
+    label: t('common.labels.class'),
+    field: (val) => val.class.name,
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'statZero',
+    label: t('common.labels.statZero'),
+    field: (val) => format.setStatsLabel(val.statZero),
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'statOne',
+    label: t('common.labels.statOne'),
+    field: (val) => format.setStatsLabel(val.statOne),
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'statTwo',
+    label: t('common.labels.statTwo'),
+    field: (val) => format.setStatsLabel(val.statTwo),
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'statThree',
+    label: t('common.labels.statThree'),
+    field: (val) => format.setStatsLabel(val.statThree),
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'years',
+    label: t('common.labels.years'),
+    field: 'years',
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'specialAbilities',
+    label: t('common.labels.specialAbilities'),
+    field: 'specialAbilities',
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'specialAbilitiesVeteran',
+    label: t('common.labels.specialAbilitiesVeteran'),
+    field: 'specialAbilitiesVeteran',
+    sortable: false,
+    align: 'left',
+  },
+] as QTableColumn<Plane>[];
+
+export const planeForm: FormItem[] = [
+  {
+    type: 'input',
+    fieldProps: {
+      label: t('common.labels.id'),
+      mask: '##########',
+      rules: [rules.isRequired],
+    },
+    queryName: 'id',
+  },
+  {
+    type: 'input',
+    fieldProps: {
+      label: t('common.labels.name'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'designation',
+  },
+  {
+    type: 'input',
+    fieldProps: {
+      label: t('common.labels.nickname'),
+    },
+    queryName: 'nickname',
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.nation'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'nationId',
+    service: nations.getNationsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.cost'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'costId',
+    service: costs.getCostsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.class'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'aircraftClassId',
+    service: aircraftClasses.getAircraftClassesSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.statZero'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'statZeroId',
+    service: stats.getStatsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.statOne'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'statOneId',
+    service: stats.getStatsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.statTwo'),
+      hint: '',
+    },
+    queryName: 'statTwoId',
+    service: stats.getStatsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.statThree'),
+      hint: '',
+    },
+    queryName: 'statThreeId',
+    service: stats.getStatsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.years'),
+      multiple: true,
+      hint: '',
+    },
+    queryName: 'years',
+    service: years.getYearsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.specialAbilities'),
+      multiple: true,
+      hint: '',
+    },
+    queryName: 'specialAbilities',
+    service: specialAbilities.getSpecialAbilitiesSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.specialAbilitiesVeteran'),
+      multiple: true,
+      hint: '',
+    },
+    queryName: 'specialAbilitiesVeteran',
+    service: specialAbilities.getSpecialAbilitiesSelect,
   },
 ];

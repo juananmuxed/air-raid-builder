@@ -3,9 +3,9 @@ import { t } from 'src/plugins/I18n';
 import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
 import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
 import { StatsApi } from 'src/services/api/StatsApi';
-import { useFormatStats } from '../UseFormatStats';
+import { useFormatProperties } from '../UseFormatStats';
 
-const format = useFormatStats();
+const format = useFormatProperties();
 
 export const useStats = () => {
   const statsApi = new StatsApi();
@@ -14,7 +14,7 @@ export const useStats = () => {
 
   const getStatsSelect = useFetchSelect(
     statsApi.getStats,
-    { optionLabel:(val) => format.setStatsLabel(val) },
+    { optionLabel: (val) => format.setStatsLabel(val) },
   );
 
   const createStat = useFetch(

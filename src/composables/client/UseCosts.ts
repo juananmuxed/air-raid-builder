@@ -3,9 +3,9 @@ import { t } from 'src/plugins/I18n';
 import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
 import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
 import { CostsApi } from 'src/services/api/CostsApi';
-import { useFormatStats } from '../UseFormatStats';
+import { useFormatProperties } from '../UseFormatStats';
 
-const format = useFormatStats();
+const format = useFormatProperties();
 
 export const useCosts = () => {
   const costsApi = new CostsApi();
