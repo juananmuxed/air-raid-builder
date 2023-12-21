@@ -146,7 +146,7 @@ const routes: RouteRecordRaw[] = [
         name: 'nation-years',
         meta: {
           titleTag: 'menu.nationYears',
-          icon: 'fas fa-flag',
+          icon: 'fas fa-house-flag',
           roles: [ROLES.EDITOR, ROLES.ADMIN],
         },
         component: () => import('src/views/manufacturers/NationYearsView.vue'),
