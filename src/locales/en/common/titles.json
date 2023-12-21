@@ -9,6 +9,7 @@
   "aircraftClasses": "aircraft class | aircraft classes",
   "nations": "nation | nations",
   "years": "year | years",
+  "nationYears": "year by nation | years by nation",
   "costs": "cost | costs",
   "stats": "stat | stats",
   "planes": "plane | planes",

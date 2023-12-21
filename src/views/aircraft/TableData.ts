@@ -9,21 +9,19 @@ import { Plane } from 'src/models/api/Planes';
 import { useRules } from 'src/composables/UseRules';
 import { t } from 'src/plugins/I18n';
 import { useFormatProperties } from 'src/composables/UseFormatStats';
-import { useNations } from 'src/composables/client/UseNations';
 import { useCosts } from 'src/composables/client/UseCosts';
 import { useAircraftClasses } from 'src/composables/client/UseAircraftClasses';
 import { useStats } from 'src/composables/client/UseStats';
-import { useYears } from 'src/composables/client/UseYears';
 import { useSpecialAbilities } from 'src/composables/client/UseSpecialAbilities';
+import { useNationYears } from 'src/composables/client/UseNationYears';
 
 const rules = useRules();
 const format = useFormatProperties();
-const nations = useNations();
 const costs = useCosts();
 const aircraftClasses = useAircraftClasses();
 const stats = useStats();
-const years = useYears();
 const specialAbilities = useSpecialAbilities();
+const nationYears = useNationYears();
 
 export const columnsAircraftClasses = [
   {
@@ -302,13 +300,6 @@ export const columnsPlanes = [
     align: 'left',
   },
   {
-    name: 'nation',
-    label: t('common.labels.nation'),
-    field: (val) => val.nation.name,
-    sortable: false,
-    align: 'left',
-  },
-  {
     name: 'class',
     label: t('common.labels.class'),
     field: (val) => val.class.name,
@@ -344,13 +335,6 @@ export const columnsPlanes = [
     align: 'left',
   },
   {
-    name: 'years',
-    label: t('common.labels.years'),
-    field: 'years',
-    sortable: false,
-    align: 'left',
-  },
-  {
     name: 'specialAbilities',
     label: t('common.labels.specialAbilities'),
     field: 'specialAbilities',
@@ -361,6 +345,12 @@ export const columnsPlanes = [
     name: 'specialAbilitiesVeteran',
     label: t('common.labels.specialAbilitiesVeteran'),
     field: 'specialAbilitiesVeteran',
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'nationYears',
+    label: t('common.labels.nationYears'),
     sortable: false,
     align: 'left',
   },
@@ -390,15 +380,6 @@ export const planeForm: FormItem[] = [
       label: t('common.labels.nickname'),
     },
     queryName: 'nickname',
-  },
-  {
-    type: 'select',
-    fieldProps: {
-      label: t('common.labels.nation'),
-      rules: [rules.isRequired],
-    },
-    queryName: 'nationId',
-    service: nations.getNationsSelect,
   },
   {
     type: 'select',
@@ -457,16 +438,6 @@ export const planeForm: FormItem[] = [
   {
     type: 'select',
     fieldProps: {
-      label: t('common.labels.years'),
-      multiple: true,
-      hint: '',
-    },
-    queryName: 'years',
-    service: years.getYearsSelect,
-  },
-  {
-    type: 'select',
-    fieldProps: {
       label: t('common.labels.specialAbilities'),
       multiple: true,
       hint: '',
@@ -483,5 +454,15 @@ export const planeForm: FormItem[] = [
     },
     queryName: 'specialAbilitiesVeteran',
     service: specialAbilities.getSpecialAbilitiesSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.nationYears'),
+      multiple: true,
+      hint: '',
+    },
+    queryName: 'nationYears',
+    service: nationYears.getNationYearsSelect,
   },
 ];

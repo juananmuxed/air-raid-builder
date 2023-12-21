@@ -141,6 +141,16 @@ const routes: RouteRecordRaw[] = [
         },
         component: () => import('src/views/manufacturers/NationsView.vue'),
       },
+      {
+        path: 'nation-years',
+        name: 'nation-years',
+        meta: {
+          titleTag: 'menu.nationYears',
+          icon: 'fas fa-flag',
+          roles: [ROLES.EDITOR, ROLES.ADMIN],
+        },
+        component: () => import('src/views/manufacturers/NationYearsView.vue'),
+      },
     ],
   },
   {

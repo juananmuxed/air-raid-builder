@@ -3,11 +3,16 @@ import { QTableColumn } from 'quasar';
 import { FormItem } from 'src/models/common/Generics';
 import { Nation } from 'src/models/api/Nations';
 import { Year } from 'src/models/api/Years';
+import { NationYear } from 'src/models/api/NationYears';
 
 import { useRules } from 'src/composables/UseRules';
 import { t } from 'src/plugins/I18n';
+import { useYears } from 'src/composables/client/UseYears';
+import { useNations } from 'src/composables/client/UseNations';
 
 const rules = useRules();
+const years = useYears();
+const nations = useNations();
 
 export const columnsNations = [
   {
@@ -105,5 +110,58 @@ export const yearForm: FormItem[] = [
       rules: [rules.isRequired],
     },
     queryName: 'year',
+  },
+];
+
+export const columnsNationYears = [
+  {
+    name: 'id',
+    label: t('common.labels.id'),
+    field: 'id',
+    sortable: true,
+    align: 'left',
+  },
+  {
+    name: 'value',
+    label: t('common.labels.value'),
+    field: 'value',
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'options',
+    label: '',
+    align: 'left',
+  },
+] as QTableColumn<NationYear>[];
+
+export const nationYearForm: FormItem[] = [
+  {
+    type: 'input',
+    fieldProps: {
+      label: t('common.labels.id'),
+      mask: '##########',
+      rules: [rules.isRequired],
+    },
+    queryName: 'id',
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.nation'),
+      rules: [rules.isRequired],
+    },
+    queryName: 'nationId',
+    service: nations.getNationsSelect,
+  },
+  {
+    type: 'select',
+    fieldProps: {
+      label: t('common.labels.years'),
+      multiple: true,
+      rules: [rules.isRequired],
+    },
+    queryName: 'years',
+    service: years.getYearsSelect,
   },
 ];
