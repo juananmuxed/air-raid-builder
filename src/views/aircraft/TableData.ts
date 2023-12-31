@@ -446,8 +446,6 @@ export const planeForm: FormItem[] = [
     fieldProps: {
       label: t('common.labels.specialAbilities'),
       multiple: true,
-      mapOptions: true,
-      emitValue: true,
       hint: '',
     },
     queryName: 'specialAbilities',
@@ -458,8 +456,6 @@ export const planeForm: FormItem[] = [
     fieldProps: {
       label: t('common.labels.specialAbilitiesVeteran'),
       multiple: true,
-      mapOptions: true,
-      emitValue: true,
       hint: '',
     },
     queryName: 'specialAbilitiesVeteran',
@@ -470,8 +466,6 @@ export const planeForm: FormItem[] = [
     fieldProps: {
       label: t('common.labels.nationYears'),
       multiple: true,
-      mapOptions: true,
-      emitValue: true,
       hint: '',
     },
     queryName: 'nationYears',

@@ -8,6 +8,7 @@ import { FetchResponse } from 'src/models/fetch/FetchResponse';
 
 import { t } from 'src/plugins/I18n';
 import { GenericView } from './GenericView';
+import { mapArraysInObject } from 'src/utils/Objects';
 
 export function genericFormDialog<T extends Record<string, any>>({
   $scope,
@@ -19,19 +20,21 @@ export function genericFormDialog<T extends Record<string, any>>({
   const isCreatingItem = ref(false);
   const dialogVisible = ref(false);
 
-  const itemsValues: Ref<Record<string, string | number | boolean | undefined>> = ref({});
+  const itemsValues: Ref<Record<string, any>> = ref({});
   const cardLoading = computed(() => $scope.createService?.isFetching || $scope.updateService?.isFetching);
 
   const openCreateDialog = () => {
+    fillSelects();
     isCreatingItem.value = true;
     dialogVisible.value = true;
   };
 
   const openEditDialog = (itemToEdit: T) => {
+    fillSelects();
     isCreatingItem.value = false;
     dialogVisible.value = true;
 
-    itemsValues.value = { ...itemToEdit };
+    itemsValues.value = mapArraysInObject(itemToEdit);
   };
 
   const closeDialog = () => {
@@ -106,11 +109,10 @@ export function genericFormDialog<T extends Record<string, any>>({
     for (let i = 0; i < $scope.dialogForm.length; i++) {
       const filter = $scope.dialogForm[i];
       if (filter.type === 'select' && filter.service) {
-        filter.service.selectBindExecute();
+        filter.service.execute();
       }
     }
   }
-
   fillSelects();
 
   function getDialog() {
