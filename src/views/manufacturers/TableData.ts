@@ -9,10 +9,12 @@ import { useRules } from 'src/composables/UseRules';
 import { t } from 'src/plugins/I18n';
 import { useYears } from 'src/composables/client/UseYears';
 import { useNations } from 'src/composables/client/UseNations';
+import { useFormatProperties } from 'src/composables/UseFormatStats';
 
 const rules = useRules();
 const years = useYears();
 const nations = useNations();
+const format = useFormatProperties();
 
 export const columnsNations = [
   {
@@ -122,9 +124,16 @@ export const columnsNationYears = [
     align: 'left',
   },
   {
-    name: 'value',
-    label: t('common.labels.value'),
-    field: 'value',
+    name: 'nationId',
+    label: t('common.labels.nation'),
+    field: (nationYear) => nationYear.nation.name,
+    sortable: false,
+    align: 'left',
+  },
+  {
+    name: 'years',
+    label: t('common.labels.years'),
+    field: (nationYear) => format.setYears(nationYear),
     sortable: false,
     align: 'left',
   },

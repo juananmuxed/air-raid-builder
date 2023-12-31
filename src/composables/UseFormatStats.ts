@@ -1,6 +1,7 @@
 import { Cost } from 'src/models/api/Costs';
 import { NationYear } from 'src/models/api/NationYears';
 import { Plane } from 'src/models/api/Planes';
+import { SpecialAbility } from 'src/models/api/SpecialAbilities';
 import { Stat } from 'src/models/api/Stats';
 
 export const useFormatProperties = () => {
@@ -48,12 +49,22 @@ export const useFormatProperties = () => {
     return `${plane.designation}${plane.nickname ? `"${plane.nickname}"` : ''}`;
   };
 
+  const setYears = (nationYear?: NationYear) => {
+    if (!nationYear) return '';
+    return setSeparator(nationYear.years.map((year) => year.year));
+  };
+
   const setNationYearLabel = (nationYear?: NationYear) => {
     if (!nationYear) return '';
     return setSeparator([
       nationYear.nation.name,
-      setSeparator(nationYear.years.map((year) => year.year)),
+      setYears(nationYear),
     ], ':');
+  };
+
+  const setAbilityName = (ability?: SpecialAbility) => {
+    if (!ability) return '';
+    return `${ability.name}${(ability.valueNumber || ability.valueString) ? ` (${ability.valueNumber || ability.valueString})` : ''}`;
   };
 
   return {
@@ -65,6 +76,8 @@ export const useFormatProperties = () => {
     setManeuverVeteran,
     setStatsLabel,
     setCompletePlaneName,
+    setYears,
     setNationYearLabel,
+    setAbilityName,
   };
 };

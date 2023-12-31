@@ -1,5 +1,6 @@
 import { AircraftClass } from './AircraftClasses';
 import { Cost } from './Costs';
+import { NationYear } from './NationYears';
 import { SpecialAbility } from './SpecialAbilities';
 import { Stat } from './Stats';
 
@@ -21,4 +22,5 @@ export type Plane = {
   statThree: Stat;
   specialAbilities?: SpecialAbility[];
   specialAbilitiesVeteran?: SpecialAbility[];
+  nationYears?: NationYear[];
 }
