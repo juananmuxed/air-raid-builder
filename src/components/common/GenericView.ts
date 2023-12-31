@@ -27,6 +27,9 @@ import {
 
 import { _GenericViewType } from 'src/models/common/Generics';
 import { Pagination } from 'src/models/fetch/Pagination';
+import { SpecialAbility } from 'src/models/api/SpecialAbilities';
+import { Stat } from 'src/models/api/Stats';
+import { NationYear } from 'src/models/api/NationYears';
 
 import { GenericViewKey } from 'src/types/Symbols';
 import { defaultListPaginatedResponseData } from 'src/data/default/FetchResponse';
@@ -35,6 +38,21 @@ import { is } from 'src/utils/Is';
 import { genericFormDialog } from './GenericFormDialog';
 import { useRules } from 'src/composables/UseRules';
 import { MIME_TYPES } from 'src/constants/MimeTypes';
+import { useFormatProperties } from 'src/composables/UseFormatStats';
+
+type LabelValue = SpecialAbility | Stat | NationYear;
+
+function isSpecialAbility(item: LabelValue): item is SpecialAbility {
+  return (item as SpecialAbility).name !== undefined;
+}
+
+function isStat(item: LabelValue): item is Stat {
+  return (item as Stat).agilityRegular !== undefined;
+}
+
+function isNationYear(item: LabelValue): item is NationYear {
+  return (item as NationYear).nationId !== undefined;
+}
 
 export type GenericView<T extends Record<string, any>> = _GenericViewType<T>;
 export const GenericView = <T extends Record<string, any> = Record<string, any>>() => {
@@ -63,6 +81,7 @@ export const GenericView = <T extends Record<string, any> = Record<string, any>>
         const file = ref();
 
         const rules = useRules();
+        const format = useFormatProperties();
 
         const loading = computed(() => $scope.tableService.isFetching
           || $scope.uploadService?.isFetching
@@ -170,17 +189,23 @@ export const GenericView = <T extends Record<string, any> = Record<string, any>>
           );
         }
 
+        function labelRender(rowValue: any) {
+          if (isSpecialAbility(rowValue)) return format.setAbilityName(rowValue);
+          if (isStat(rowValue)) return format.setStatsLabel(rowValue);
+          if (isNationYear(rowValue)) return format.setNationYearLabel(rowValue);
+          return rowValue;
+        }
+
         function renderBodyCell(row: T) {
           const val = row.value;
           if (utilIs.array(val)) {
             return h(
               QTd,
               () => val
-                .filter((item) => 'name' in item)
                 .map((item) => h(
                   QChip,
                   {
-                    label: item.name + (item.valueId ? `(${item.valueId})` : ''),
+                    label: labelRender(item),
                     color: 'secondary',
                     textColor: 'white',
                     size: 'sm',
