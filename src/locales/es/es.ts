@@ -8,6 +8,7 @@ import messages from './common/messages.json';
 import labels from './common/labels.json';
 import buttons from './common/buttons.json';
 import texts from './common/texts.json';
+import home from './pages/home.json';
 
 export default {
   menu,
@@ -21,5 +22,8 @@ export default {
     labels,
     buttons,
     texts,
+  },
+  pages: {
+    home,
   },
 };

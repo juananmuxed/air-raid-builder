@@ -9,6 +9,12 @@ import { LOCAL_STORAGE } from 'src/constants/Keys';
 
 type MessagesType = typeof en;
 
+export type ContentMessages = {
+  title: string;
+  paragraphs?: string[];
+  list?: string[];
+}
+
 export const i18n = createI18n({
   legacy: false,
   locale: '',

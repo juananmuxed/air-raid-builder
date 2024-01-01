@@ -1,0 +1,32 @@
+{
+  "general": {
+    "title": "Generador de listas para Air Raid"
+  },
+  "contents": [
+    {
+      "title": "Bienvenido",
+      "paragraphs": [
+        "Este sitio web te permite crear listas para el juego de miniaturas Air Raid. Podrás crear, compartir e imprimir tus listas de las facciones disponibles para las distintas expansiones.",
+        "Eres más que bienvenido a usar esta web para disfrutar al máximo de este juego."
+      ]
+    },
+    {
+      "title": "Secciones",
+      "paragraphs": [
+        "Dentro de la sección de Listas podrás revisar listas o crear nuevas, así como compartiras. Además en la sección de Configuración podrás cambiar algunas cosas a la hora de Imprimir o ver las listas."
+      ]
+    },
+    {
+      "title": "Expansiones disponibles",
+      "list": [
+        "Libro básico"
+      ]
+    },
+    {
+      "title": "Novedades",
+      "list": [
+        "¡Versión 1.0.0 publicada!"
+      ]
+    }
+  ]
+}

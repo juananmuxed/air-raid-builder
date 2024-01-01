@@ -1,0 +1,32 @@
+{
+  "general": {
+    "title": "Air Raid list builder"
+  },
+  "contents": [
+    {
+      "title": "Welcome",
+      "paragraphs": [
+        "This website allows you to create rosters for the Air Raid miniatures game. You will be able to create, share and print your lists of the factions available for the different expansions.",
+        "You are more than welcome to use this website to fully enjoy this game."
+      ]
+    },
+    {
+      "title": "Sections",
+      "paragraphs": [
+        "Within the Lists section you can review lists or create new ones, as well as share them. Also in the Settings section you can change some things when Printing or viewing the lists."
+      ]
+    },
+    {
+      "title": "Available expansions",
+      "list": [
+        "Basic book"
+      ]
+    },
+    {
+      "title": "News",
+      "list": [
+        "Version 1.0.0 released!"
+      ]
+    }
+  ]
+}
