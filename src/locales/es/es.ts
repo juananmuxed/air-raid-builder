@@ -10,6 +10,7 @@ import buttons from './common/buttons.json';
 import texts from './common/texts.json';
 import home from './pages/home.json';
 import about from './pages/about.json';
+import config from './pages/config.json';
 
 export default {
   menu,
@@ -27,5 +28,6 @@ export default {
   pages: {
     home,
     about,
+    config,
   },
 };

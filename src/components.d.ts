@@ -22,6 +22,7 @@ declare module 'vue' {
     MinusIcon: typeof import('./components/common/icons/MinusIcon.vue')['default']
     PlusIcon: typeof import('./components/common/icons/PlusIcon.vue')['default']
     PrintIcon: typeof import('./components/common/icons/PrintIcon.vue')['default']
+    RadioGroup: typeof import('./components/common/RadioGroup.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SaveIcon: typeof import('./components/common/icons/SaveIcon.vue')['default']
