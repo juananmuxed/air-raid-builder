@@ -1,0 +1,57 @@
+{
+  "general": {
+    "title": "Acerca de esta web"
+  },
+  "contents": [
+    {
+      "title": "¿Qué es esta web?",
+      "paragraphs": [
+        "Esto es una herramienta NO OFICIAL para construir listas del juego Air Raid 36/46. Todos los derechos reservados a los creadores.",
+        "Para cualquier consulta sobre reglas del juego contacta con los creadores del mismo."
+      ],
+      "list": [
+        {
+          "text": "Facebook Air Raid 36/46",
+          "url": "https://www.facebook.com/airraid3646/"
+        }
+      ]
+    },
+    {
+      "title": "¿Cómo reportar errores en la web?",
+      "paragraphs": [
+        "Si encuentra cualquier Error (bug) en la web, puede reportarlo por Discord o GitHub siguiendo los enlaces siguientes.",
+        "También puede comunicar cualquier nueva característica que desee que se implemente en la web."
+      ],
+      "list": [
+        {
+          "text": "Discord",
+          "url": "https://discord.gg/88rzwfU"
+        },
+        {
+          "text": "Github",
+          "url": "https://github.com/juananmuxed/air-raid-builder/issues"
+        }
+      ]
+    },
+    {
+      "title": "¿Cómo guardar listas?",
+      "paragraphs": [
+        "Las listas se guardan simplemente con el botón correspondiente y se almacenan en el navegador (Local Storage) por lo que en cada equipo y navegador podrás guardar distintos.",
+        "Para poder compartir o exportar solo necesitas el \"id\" de la lista que podrás encontrar en al URL de dicha lista justo después de \"?id=\". Este enlace si será una copia exacta de la lista que estés viendo en pantalla.",
+        "Compartiendo dicho enlace, cualquiera podrá ver esta lista."
+      ]
+    },
+    {
+      "title": "¿Quién es parte del proyecto?",
+      "paragraphs": [
+        "Si desea colaborar ya sea modificando código o traduciendo a otros idiomas (o mejorando las traducciones) usa la misma fuente de comunicación que mas arriba, Discord o Github"
+      ],
+      "list": [
+        {
+          "text": "MuXeD",
+          "url": "https://muxed.dev/"
+        }
+      ]
+    }
+  ]
+}

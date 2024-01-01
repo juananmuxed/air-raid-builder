@@ -1,0 +1,57 @@
+{
+  "general": {
+    "title": "About this website"
+  },
+  "contents": [
+    {
+      "title": "What is this website?",
+      "paragraphs": [
+        "This is an UNOFFICIAL tool to build lists for the Air Raid 36/46 game. All rights reserved to the creators.",
+        "For any questions about the rules of the game, contact the creators of the game."
+      ],
+      "list": [
+        {
+          "text": "Facebook Air Raid 36/46",
+          "url": "https://www.facebook.com/airraid3646/"
+        }
+      ]
+    },
+    {
+      "title": "How to report errors on the website?",
+      "paragraphs": [
+        "If you find any Error (bug) on the website, you can report it via Discord or GitHub by following the links below.",
+        "You can also communicate any new features you want implemented on the web."
+      ],
+      "list": [
+        {
+          "text": "Discord",
+          "url": "https://discord.gg/88rzwfU"
+        },
+        {
+          "text": "Github",
+          "url": "https://github.com/juananmuxed/air-raid-builder/issues"
+        }
+      ]
+    },
+    {
+      "title": "How to save lists?",
+      "paragraphs": [
+        "The lists are simply saved with the corresponding button and are stored in the browser (Local Storage) so you can save different ones on each computer and browser.",
+        "To be able to share or export you only need the \"id\" of the list that you can find in the URL of said list just after \"?id=\". This link will be an exact copy of the list you are viewing onscreen.",
+        "By sharing this link, anyone can see this list."
+      ]
+    },
+    {
+      "title": "Who is part of the project?",
+      "paragraphs": [
+        "If you want to collaborate either by modifying code or translating into other languages (or improving translations) use the same communication source as above, Discord or Github"
+      ],
+      "list": [
+        {
+          "text": "MuXeD",
+          "url": "https://muxed.dev/"
+        }
+      ]
+    }
+  ]
+}

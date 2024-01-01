@@ -26,6 +26,12 @@
       "title": "Novedades",
       "list": [
         "¡Versión 1.0.0 publicada!"
+      ],
+      "paragraphs": [
+        {
+          "text": "Todos los cambios.",
+          "url": "https://github.com/juananmuxed/air-raid-builder/blob/main/CHANGELOG.md"
+        }
       ]
     }
   ]

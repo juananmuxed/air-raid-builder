@@ -9,10 +9,15 @@ import { LOCAL_STORAGE } from 'src/constants/Keys';
 
 type MessagesType = typeof en;
 
+export type LinkItem = {
+  text: string;
+  url?: string;
+}
+
 export type ContentMessages = {
   title: string;
-  paragraphs?: string[];
-  list?: string[];
+  paragraphs?: string[] | LinkItem[];
+  list?: string[] | LinkItem[];
 }
 
 export const i18n = createI18n({
