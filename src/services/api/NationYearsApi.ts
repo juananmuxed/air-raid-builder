@@ -1,4 +1,5 @@
 import { NationYear } from 'src/models/api/NationYears';
+import { Year } from 'src/models/api/Years';
 import { Pagination } from 'src/models/fetch/Pagination';
 
 import { clientApi } from 'src/plugins/Axios';
@@ -8,6 +9,10 @@ const controller = 'nationYears';
 export class NationYearsApi {
   async getNationYears() {
     return clientApi.getListClient<NationYear>(controller, '');
+  }
+
+  async getYearsByNation(nationId: number) {
+    return clientApi.getListClient<Year>(controller, '/nation/{nationId}', { nationId });
   }
 
   async createNationYear(nationYear: NationYear) {

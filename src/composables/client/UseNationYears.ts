@@ -14,6 +14,8 @@ export const useNationYears = () => {
 
   const getNationYearsSelect = useFetchSelect(nationYearsApi.getNationYears, { optionLabel: (val) => format.setNationYearLabel(val) });
 
+  const getYearsByNationSelect = useFetchSelect(nationYearsApi.getYearsByNation, { optionLabel: 'year' });
+
   const createNationYear = useFetch(
     nationYearsApi.createNationYear,
     { successMessage: t('common.messages.correctlyCreated') },
@@ -36,6 +38,7 @@ export const useNationYears = () => {
   return {
     getNationYears,
     getNationYearsSelect,
+    getYearsByNationSelect,
     createNationYear,
     updateNationYear,
     deleteNationYear,

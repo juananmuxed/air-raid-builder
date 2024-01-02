@@ -10,10 +10,16 @@ const axiosApi = axios.create({
 });
 
 const controllersWithoutAuth = ['auth'];
+const endpointsWithoutAuth = [
+  { url: 'nations', method: 'get' },
+  { url: 'nationYears/nation/*', method: 'get' },
+];
 
 axiosApi.interceptors.request.use(async (config) => {
   const controller = config.url?.split('/')[0];
   if (controller && controllersWithoutAuth.includes(controller)) return config;
+  if (endpointsWithoutAuth.some((endPoint) => new RegExp(endPoint.url).test(config.url || '')
+  && endPoint.method === config.method)) return config;
   const user = useUserStore();
   if (!user.validToken) await user.refreshTokenHandler();
   if (config.headers && user.token) config.headers.Authorization = `Bearer ${user.token.token}`;

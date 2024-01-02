@@ -11,6 +11,8 @@ import texts from './common/texts.json';
 import home from './pages/home.json';
 import about from './pages/about.json';
 import config from './pages/config.json';
+import lists from './pages/lists.json';
+import nations from './database/nations.json';
 
 export default {
   menu,
@@ -29,5 +31,9 @@ export default {
     home,
     about,
     config,
+    lists,
+  },
+  database: {
+    nations,
   },
 };

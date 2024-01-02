@@ -17,6 +17,7 @@ declare module 'vue' {
     HeaderPage: typeof import('./components/header/HeaderPage.vue')['default']
     IconComponent: typeof import('./components/common/IconComponent.vue')['default']
     LinkIcon: typeof import('./components/common/icons/LinkIcon.vue')['default']
+    LoadingSpinner: typeof import('./components/common/LoadingSpinner.vue')['default']
     MenuItem: typeof import('./components/menu/MenuItem.vue')['default']
     MenuParent: typeof import('./components/menu/MenuParent.vue')['default']
     MinusIcon: typeof import('./components/common/icons/MinusIcon.vue')['default']

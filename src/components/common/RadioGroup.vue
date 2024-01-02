@@ -2,20 +2,19 @@
   <div class="radio-group">
     <template v-for="(radio, index) in options" :key="index">
       <label
-        v-if="radio.active"
-        :for="radio.name"
-        :class="radio.value == modelValue ? 'active' : ''"
+        :for="radio.name?.toString()"
+        :class="radio.id == modelValue ? 'active' : ''"
       >
         <input
-          :id="radio.name"
+          :id="radio.name?.toString()"
           class="radio-input"
           type="radio"
-          :value="radio.value"
-          :checked="radio.value == modelValue"
+          :value="radio.id"
+          :checked="radio.id == modelValue"
           @change="updateValue($event)"
         >
         <img v-if="radio.imgUrl" :src="radio.imgUrl">
-        <b>{{ radio.label }}</b>
+        <b>{{ radio.name }}</b>
       </label>
     </template>
   </div>
@@ -27,11 +26,9 @@ const emit = defineEmits(['update:modelValue']);
 defineProps<{
   modelValue?: string;
   options: {
-    label?: string;
-    name?: string;
-    value?: string;
+    name?: string | number;
+    id?: string | number;
     imgUrl?: string;
-    active?: boolean;
   }[];
 }>();
 

@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import RadioGroup from 'src/components/common/RadioGroup.vue';
 import { LOCAL_STORAGE } from 'src/constants/Keys';
 import { availableLocales, loadLanguageAsync } from 'src/plugins/I18n';
 
@@ -21,7 +20,7 @@ const langToken = localStorage.getItem(LOCAL_STORAGE.LANG) || 'en';
 
 const lang = ref(langToken);
 
-const langs = computed(() => availableLocales.map((_lang) => ({ ..._lang, active: true })));
+const langs = computed(() => availableLocales.map((_lang) => ({ id: _lang.value, name: _lang.label, imgUrl: _lang.avatar })));
 
 watch(lang, (newValue) => {
   loadLanguageAsync(newValue || 'en');
