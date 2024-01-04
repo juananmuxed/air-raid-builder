@@ -3,9 +3,17 @@
   "raf": "RAF",
   "soviet": "Soviets",
   "luftwaffe": "Luftwaffe",
-  "japan": "Japan",
+  "japan": "Japanese",
   "regia": "Aeronautic Regia",
-  "finland": "Finland",
-  "france": "France",
-  "dutchEastIndies": "Dutch east Indies"
+  "finland": "Finnish",
+  "france": "French",
+  "dutchEastIndies": "Dutch",
+  "china": "Chinese",
+  "belgian": "Belgian",
+  "spanishRepublic": "Spanish republic",
+  "bulgarian": "Bulgarian",
+  "freeFrench": "Free french",
+  "hungarian": "Hungarian",
+  "rumanian": "Rumanian",
+  "nationalistAviation": "Nationalist aviation"
 }

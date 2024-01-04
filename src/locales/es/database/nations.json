@@ -1,11 +1,19 @@
 {
   "usaf": "USAF",
   "raf": "RAF",
-  "soviet": "Soviéticos",
+  "soviet": "Soviética",
   "luftwaffe": "Luftwaffe",
-  "japan": "Japón",
+  "japan": "Japonesa",
   "regia": "Regia aeronáutica",
-  "finland": "Finlandia",
-  "france": "Francia",
-  "dutchEastIndies": "Indias holandesas orientales"
+  "finland": "Finlandesa",
+  "france": "Francesa",
+  "dutchEastIndies": "Holandesa",
+  "china": "China",
+  "belgian": "Belga",
+  "spanishRepublic": "República española",
+  "bulgarian": "Búlgara",
+  "freeFrench": "Francesa libre",
+  "hungarian": "Húngara",
+  "rumanian": "Rumana",
+  "nationalistAviation": "Aviación Nacional"
 }

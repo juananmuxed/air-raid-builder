@@ -11,7 +11,7 @@ const axiosApi = axios.create({
 
 const controllersWithoutAuth = ['auth'];
 const endpointsWithoutAuth = [
-  { url: 'nations', method: 'get' },
+  { url: 'nations$', method: 'get' },
   { url: 'nationYears/nation/*', method: 'get' },
 ];
 
