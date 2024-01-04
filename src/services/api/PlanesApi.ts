@@ -10,6 +10,10 @@ export class PlanesApi {
     return clientApi.getListClient<Plane>(controller, '');
   }
 
+  async getPlanesByNationAndYear(nationId: number, yearId: number) {
+    return clientApi.getListClient<Plane>(controller, '/nation/{nationId}/year/{yearId}', { nationId, yearId });
+  }
+
   async createPlane(plane: Plane) {
     return clientApi.postClient<Plane>(controller, '', plane);
   }

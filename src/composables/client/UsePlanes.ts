@@ -14,6 +14,8 @@ export const usePlanes = () => {
 
   const getPlanesSelect = useFetchSelect(planesApi.getPlanes, { optionLabel: (val) => format.setCompletePlaneName(val) });
 
+  const getPlanesByNationAndYear = useFetchSelect(planesApi.getPlanesByNationAndYear, { optionLabel: 'designation' });
+
   const createPlane = useFetch(
     planesApi.createPlane,
     { successMessage: t('common.messages.correctlyCreated') },
@@ -36,6 +38,7 @@ export const usePlanes = () => {
   return {
     getPlanes,
     getPlanesSelect,
+    getPlanesByNationAndYear,
     createPlane,
     updatePlane,
     deletePlane,

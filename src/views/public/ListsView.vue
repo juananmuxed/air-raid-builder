@@ -8,21 +8,35 @@
         <h2>{{ $t('pages.lists.general.nation') }}</h2>
         <QInnerLoading :showing="nations.getNationsSelect.isFetching" />
         <RadioGroup v-model="nation" :options="selectNations" />
-        <h2>{{ $t('pages.lists.general.year') }}</h2>
-        <QInnerLoading :showing="nationYears.getYearsByNationSelect.isFetching" />
-        <RadioGroup v-model="year" :options="selectYears" />
+        <p>{{ $t('pages.lists.paragraphs.selectNation') }}</p>
+        <template v-if="hasNation">
+          <h2>{{ $t('pages.lists.general.year') }}</h2>
+          <QInnerLoading :showing="nationYears.getYearsByNationSelect.isFetching" />
+          <RadioGroup v-model="year" :options="selectYears" />
+          <p>{{ $t('pages.lists.paragraphs.selectYear') }}</p>
+        </template>
+        <button
+          :disabled="!hasNationAndYear"
+          @click="startList"
+        >
+          {{ $t("pages.lists.buttons.createList") }}
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Notify } from 'quasar';
+
 import { useNationYears } from 'src/composables/client/UseNationYears';
 import { useNations } from 'src/composables/client/UseNations';
+import { usePlanes } from 'src/composables/client/UsePlanes';
 import { t } from 'src/plugins/I18n';
 
 const nations = useNations();
 const nationYears = useNationYears();
+const planes = usePlanes();
 
 const nation = ref();
 const year = ref();
@@ -37,10 +51,24 @@ const selectYears = computed(() => nationYears.getYearsByNationSelect.data.map((
   name: _year.year,
 })));
 
+const hasNation = computed(() => nation.value !== undefined);
+const hasNationAndYear = computed(() => hasNation.value && year.value !== undefined);
+
 watch(nation, async (newValue) => {
   await nationYears.getYearsByNationSelect.execute(newValue);
   year.value = undefined;
 });
+
+async function startList() {
+  if (!nation.value || !year.value) {
+    Notify.create({
+      message: t('warnings.notSelectedNationOrYear'),
+      type: 'warning',
+    });
+    return;
+  }
+  await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
+}
 
 async function initLoad() {
   await nations.getNationsSelect.execute();

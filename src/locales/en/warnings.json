@@ -1,3 +1,4 @@
 {
-  "expiredCredentials": "Expired credentials"
+  "expiredCredentials": "Expired credentials",
+  "notSelectedNationOrYear": "Nation or year not selected"
 }

@@ -3,5 +3,12 @@
     "title": "Lists",
     "nation": "Nation",
     "year": "Year"
+  },
+  "buttons": {
+    "createList": "Create list"
+  },
+  "paragraphs": {
+    "selectNation": "Select a nation to continue",
+    "selectYear": "Select a year to continue"
   }
 }
