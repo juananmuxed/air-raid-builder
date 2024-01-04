@@ -3,7 +3,7 @@ import { t } from 'src/plugins/I18n';
 import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
 import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
 import { SpecialAbilitiesApi } from 'src/services/api/SpecialAbilitiesApi';
-import { useFormatProperties } from '../UseFormatStats';
+import { useFormatProperties } from '../UseFormatProperties';
 
 const format = useFormatProperties();
 

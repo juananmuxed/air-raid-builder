@@ -38,7 +38,7 @@ import { is } from 'src/utils/Is';
 import { genericFormDialog } from './GenericFormDialog';
 import { useRules } from 'src/composables/UseRules';
 import { MIME_TYPES } from 'src/constants/MimeTypes';
-import { useFormatProperties } from 'src/composables/UseFormatStats';
+import { useFormatProperties } from 'src/composables/UseFormatProperties';
 
 type LabelValue = SpecialAbility | Stat | NationYear;
 

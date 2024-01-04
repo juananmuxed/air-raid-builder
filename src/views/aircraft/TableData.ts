@@ -8,7 +8,7 @@ import { Plane } from 'src/models/api/Planes';
 
 import { useRules } from 'src/composables/UseRules';
 import { t } from 'src/plugins/I18n';
-import { useFormatProperties } from 'src/composables/UseFormatStats';
+import { useFormatProperties } from 'src/composables/UseFormatProperties';
 import { useCosts } from 'src/composables/client/UseCosts';
 import { useAircraftClasses } from 'src/composables/client/UseAircraftClasses';
 import { useStats } from 'src/composables/client/UseStats';
@@ -180,7 +180,6 @@ export const statForm: FormItem[] = [
     type: 'input',
     fieldProps: {
       label: t('common.labels.speedMinMaximum'),
-      rules: [rules.isRequired],
       mask: '##',
     },
     queryName: 'speedMinMaximum',
@@ -189,7 +188,6 @@ export const statForm: FormItem[] = [
     type: 'input',
     fieldProps: {
       label: t('common.labels.speedMaxMaximum'),
-      rules: [rules.isRequired],
       mask: '##',
     },
     queryName: 'speedMaxMaximum',
@@ -207,7 +205,6 @@ export const statForm: FormItem[] = [
     type: 'input',
     fieldProps: {
       label: t('common.labels.agilityMaximum'),
-      rules: [rules.isRequired],
       mask: '##',
     },
     queryName: 'agilityMaximum',
@@ -216,7 +213,6 @@ export const statForm: FormItem[] = [
     type: 'input',
     fieldProps: {
       label: t('common.labels.firepower'),
-      rules: [rules.isRequired],
       mask: 'A',
     },
     queryName: 'firepower',
@@ -234,7 +230,6 @@ export const statForm: FormItem[] = [
     type: 'input',
     fieldProps: {
       label: t('common.labels.maneuverRookieMaximum'),
-      rules: [rules.isRequired],
       mask: '##',
     },
     queryName: 'maneuverRookieMaximum',
@@ -252,7 +247,6 @@ export const statForm: FormItem[] = [
     type: 'input',
     fieldProps: {
       label: t('common.labels.maneuverRegularMaximum'),
-      rules: [rules.isRequired],
       mask: '##',
     },
     queryName: 'maneuverRegularMaximum',
@@ -270,7 +264,6 @@ export const statForm: FormItem[] = [
     type: 'input',
     fieldProps: {
       label: t('common.labels.maneuverVeteranMaximum'),
-      rules: [rules.isRequired],
       mask: '##',
     },
     queryName: 'maneuverVeteranMaximum',

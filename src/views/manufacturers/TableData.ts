@@ -9,7 +9,7 @@ import { useRules } from 'src/composables/UseRules';
 import { t } from 'src/plugins/I18n';
 import { useYears } from 'src/composables/client/UseYears';
 import { useNations } from 'src/composables/client/UseNations';
-import { useFormatProperties } from 'src/composables/UseFormatStats';
+import { useFormatProperties } from 'src/composables/UseFormatProperties';
 
 const rules = useRules();
 const years = useYears();

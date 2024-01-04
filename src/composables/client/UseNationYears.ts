@@ -3,7 +3,7 @@ import { t } from 'src/plugins/I18n';
 import { useFetchPaginated } from 'src/composables/fetch/UseFetchPaginated';
 import { useFetchSelect } from 'src/composables/fetch/UseFetchSelect';
 import { NationYearsApi } from 'src/services/api/NationYearsApi';
-import { useFormatProperties } from '../UseFormatStats';
+import { useFormatProperties } from '../UseFormatProperties';
 
 const format = useFormatProperties();
 

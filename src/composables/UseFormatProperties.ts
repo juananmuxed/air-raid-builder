@@ -5,12 +5,13 @@ import { SpecialAbility } from 'src/models/api/SpecialAbilities';
 import { Stat } from 'src/models/api/Stats';
 
 export const useFormatProperties = () => {
-  const setMinMax = (min: number, max: number) => {
-    if (min === max) return max.toString();
+  const setMinMax = (min?: number, max?: number) => {
+    if (min === max) return max?.toString() || '-';
     return `${min}-${max}`;
   };
 
   const setSeparator = (items: Array<string | number>, separator = '/') => {
+    if (items.length === 0) return '-';
     return items.join(separator);
   };
 
@@ -18,13 +19,13 @@ export const useFormatProperties = () => {
     return !cost ? '' : setSeparator([cost.rookie, cost.regular, cost.veteran]);
   };
 
-  const setAgility = (stat: Stat) => setSeparator([stat.agilityRegular, stat.agilityMaximum]);
+  const setAgility = (stat: Stat) => setSeparator([stat.agilityRegular || '-', stat.agilityMaximum || '-']);
 
-  const setManeuverRookie = (stat: Stat) => setSeparator([stat.maneuverRookieRegular, stat.maneuverRookieMaximum]);
+  const setManeuverRookie = (stat: Stat) => setSeparator([stat.maneuverRookieRegular || '-', stat.maneuverRookieMaximum || '-']);
 
-  const setManeuverRegular = (stat: Stat) => setSeparator([stat.maneuverRegularRegular, stat.maneuverRegularMaximum]);
+  const setManeuverRegular = (stat: Stat) => setSeparator([stat.maneuverRegularRegular || '-', stat.maneuverRegularMaximum || '-']);
 
-  const setManeuverVeteran = (stat: Stat) => setSeparator([stat.maneuverVeteranRegular, stat.maneuverVeteranMaximum]);
+  const setManeuverVeteran = (stat: Stat) => setSeparator([stat.maneuverVeteranRegular || '-', stat.maneuverVeteranMaximum || '-']);
 
   const setSpeed = (stat: Stat) => {
     return setSeparator([
@@ -37,7 +38,7 @@ export const useFormatProperties = () => {
     return setSeparator([
       setSpeed(stat),
       setAgility(stat),
-      stat.firepower,
+      stat.firepower || '-',
       setManeuverRookie(stat),
       setManeuverRegular(stat),
       setManeuverVeteran(stat),
