@@ -47,7 +47,7 @@ export const useFormatProperties = () => {
 
   const setCompletePlaneName = (plane?: Plane) => {
     if (!plane) return '';
-    return `${plane.designation}${plane.nickname ? `"${plane.nickname}"` : ''}`;
+    return `${plane.designation}${plane.nickname ? ` "${plane.nickname}"` : ''}`;
   };
 
   const setYears = (nationYear?: NationYear) => {
