@@ -1,4 +1,6 @@
 {
   "welcome": "Welcome!",
-  "logoutSuccess": "Correctly logout"
+  "logoutSuccess": "Correctly logout",
+  "saveList": "Saved list correctly",
+  "copiedClipboard": "Copied URL"
 }

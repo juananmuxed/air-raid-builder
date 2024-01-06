@@ -1,4 +1,6 @@
 {
   "welcome": "¡Bienvenido!",
-  "logoutSuccess": "Desconectado correctamente"
+  "logoutSuccess": "Desconectado correctamente",
+  "saveList": "Lista guardada correctamente",
+  "copiedClipboard": "URL Copiada"
 }

@@ -2,10 +2,16 @@
   "general": {
     "title": "Lists",
     "nation": "Nation",
-    "year": "Year"
+    "year": "Year",
+    "listName": "List name"
   },
   "buttons": {
-    "createList": "Create list"
+    "createList": "Create list",
+    "reset": "Reset",
+    "save": "Save",
+    "delete": "Delete",
+    "print": "Print",
+    "copyUrl": "Copy URL"
   },
   "paragraphs": {
     "selectNation": "Select a nation to continue",

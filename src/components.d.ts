@@ -27,6 +27,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SaveIcon: typeof import('./components/common/icons/SaveIcon.vue')['default']
+    SheetOptions: typeof import('./components/lists/SheetOptions.vue')['default']
     ToastListComponent: typeof import('./components/toast/ToastListComponent.vue')['default']
     UndoIcon: typeof import('./components/common/icons/UndoIcon.vue')['default']
   }

@@ -1,4 +1,5 @@
 {
   "expiredCredentials": "Credenciales caducadas",
-  "notSelectedNationOrYear": "Nación o año no seleccionado"
+  "notSelectedNationOrYear": "Nación o año no seleccionado",
+  "deletedList": "Lista eliminada"
 }

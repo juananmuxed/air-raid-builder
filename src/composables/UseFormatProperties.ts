@@ -10,9 +10,13 @@ export const useFormatProperties = () => {
     return `${min}-${max}`;
   };
 
-  const setSeparator = (items: Array<string | number>, separator = '/') => {
+  const setSeparator = (items: Array<string | number | undefined>, separator = '/') => {
     if (items.length === 0) return '-';
-    return items.join(separator);
+    return items.filter((item) => item !== undefined).join(separator);
+  };
+
+  const splitSeparator = (itemsString: string, separator = '/') => {
+    return itemsString.split(separator);
   };
 
   const setCosts = (cost?: Cost) => {
@@ -69,6 +73,8 @@ export const useFormatProperties = () => {
   };
 
   return {
+    setSeparator,
+    splitSeparator,
     setCosts,
     setSpeed,
     setAgility,

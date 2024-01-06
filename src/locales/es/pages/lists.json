@@ -2,10 +2,16 @@
   "general": {
     "title": "Listas",
     "nation": "Nación",
-    "year": "Año"
+    "year": "Año",
+    "listName": "Nombre de la lista"
   },
   "buttons": {
-    "createList": "Crear lista"
+    "createList": "Crear lista",
+    "reset": "Restaurar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "print": "Imprimir",
+    "copyUrl": "Copiar URL"
   },
   "paragraphs": {
     "selectNation": "Seleccione una nación para continuar",
