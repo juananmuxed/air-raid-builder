@@ -17,8 +17,8 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
+            git restore .
             git pull origin main
             npm i
-            git restore package-lock.json
             npm run build
             cp example.htaccess dist/.htaccess
