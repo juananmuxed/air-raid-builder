@@ -5,11 +5,13 @@ import AutoImport from 'unplugin-auto-import/vite';
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
 import { sassMigratorQuasar } from 'rollup-plugin-sass-migrator';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
   resolve: {
     alias: {
       src: path.resolve(__dirname, 'src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   plugins: [

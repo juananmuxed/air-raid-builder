@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <img src="src/assets/img/logo.png" alt="Clash of Spears">
+      <img src="@/assets/img/logo.png" alt="Clash of Spears">
     </div>
     <nav>
       <ul>
