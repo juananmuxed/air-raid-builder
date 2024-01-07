@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <img src="@/assets/img/logo.png" alt="Clash of Spears">
+      <img src="@/assets/img/logo.png" alt="Air Raid 36/46">
     </div>
     <nav>
       <ul>

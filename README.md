@@ -68,7 +68,7 @@ Please follow one of this links to report a bug:
 
 ## 📌 Versions
 
-Used [SemVer](http://semver.org/) for versions. For all available version, see [tags](https://github.com/juananmuxed/clash-of-spears-api/tags).
+Used [SemVer](http://semver.org/) for versions. For all available version, see [tags](https://github.com/juananmuxed/air-raid-builder/tags).
 
 And here the [Changelog](CHANGELOG.md)
 
