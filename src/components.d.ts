@@ -10,6 +10,7 @@ declare module 'vue' {
     ArrowDownIcon: typeof import('./components/common/icons/ArrowDownIcon.vue')['default']
     ArrowUpIcon: typeof import('./components/common/icons/ArrowUpIcon.vue')['default']
     BadgeComponent: typeof import('./components/common/BadgeComponent.vue')['default']
+    CheckboxComponent: typeof import('./components/common/CheckboxComponent.vue')['default']
     CheckIcon: typeof import('./components/common/icons/CheckIcon.vue')['default']
     CloseIcon: typeof import('./components/common/icons/CloseIcon.vue')['default']
     DeleteIcon: typeof import('./components/common/icons/DeleteIcon.vue')['default']
@@ -17,6 +18,9 @@ declare module 'vue' {
     HeaderPage: typeof import('./components/header/HeaderPage.vue')['default']
     IconComponent: typeof import('./components/common/IconComponent.vue')['default']
     LinkIcon: typeof import('./components/common/icons/LinkIcon.vue')['default']
+    ListData: typeof import('./components/lists/ListData.vue')['default']
+    ListItems: typeof import('./components/lists/ListItems.vue')['default']
+    ListUnits: typeof import('./components/lists/ListUnits.vue')['default']
     LoadingSpinner: typeof import('./components/common/LoadingSpinner.vue')['default']
     MenuItem: typeof import('./components/menu/MenuItem.vue')['default']
     MenuParent: typeof import('./components/menu/MenuParent.vue')['default']
@@ -30,5 +34,6 @@ declare module 'vue' {
     SheetOptions: typeof import('./components/lists/SheetOptions.vue')['default']
     ToastListComponent: typeof import('./components/toast/ToastListComponent.vue')['default']
     UndoIcon: typeof import('./components/common/icons/UndoIcon.vue')['default']
+    UnitInput: typeof import('./components/lists/UnitInput.vue')['default']
   }
 }

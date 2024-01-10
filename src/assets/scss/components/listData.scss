@@ -1,0 +1,11 @@
+.list-data {
+  display: flex;
+  flex-direction: row;
+  gap: $padding_md;
+  flex-wrap: wrap;
+
+  img {
+    width: $list-logo_size;
+    height: $list-logo_size;
+  }
+}

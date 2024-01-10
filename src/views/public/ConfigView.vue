@@ -9,12 +9,23 @@
         :options="langs"
       />
     </div>
+    <div class="config-item">
+      <CheckboxComponent
+        id="printArmiesImages"
+        v-model="options.printArmiesImages"
+      >
+        {{ $t("pages.config.general.printArmiesImages") }}
+      </CheckboxComponent>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { LOCAL_STORAGE } from 'src/constants/Keys';
 import { availableLocales, loadLanguageAsync } from 'src/plugins/I18n';
+import { useOptionsStore } from 'src/stores/UseOptions';
+
+const options = useOptionsStore();
 
 const langToken = localStorage.getItem(LOCAL_STORAGE.LANG) || 'en';
 

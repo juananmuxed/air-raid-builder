@@ -1,18 +1,18 @@
 #app {
-  >.container {
-    min-height : 100vh;
-    margin     :auto;
-    display           : grid;
+  > .container {
+    min-height: 100vh;
+    margin: auto;
+    display: grid;
     grid-template-rows: auto 1fr auto;
-    height            : auto;
+    height: auto;
   }
 
   main {
     min-height: 100%;
-    margin    : 0 auto;
-    max-width : $width-content;
-    padding   : 12px 20px;
-    width     : auto;
+    margin: 0 auto;
+    max-width: $width-content;
+    padding: 12px 20px;
+    width: auto;
   }
 }
 

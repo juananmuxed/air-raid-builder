@@ -52,6 +52,9 @@ export const useSheetsStore = defineStore('sheets', () => {
     return savedLists.value[listName.value] !== listCompact.value;
   });
 
+  const nationComplete = computed(() => selectNations.value.find((_nation) => Number(nation.value) === _nation.id));
+  const yearComplete = computed(() => selectYears.value.find((_year) => Number(year.value) === _year.id));
+
   watch(nation, async (newValue) => {
     if (newValue) await nationYears.getYearsByNationSelect.execute(newValue);
     if (creatingList.value) year.value = undefined;
@@ -155,6 +158,7 @@ export const useSheetsStore = defineStore('sheets', () => {
       await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
       creatingList.value = true;
     }
+    updateUriParams();
   }
 
   return {
@@ -170,6 +174,8 @@ export const useSheetsStore = defineStore('sheets', () => {
     loading,
     isInSavedList,
     isEditedList,
+    nationComplete,
+    yearComplete,
     getUriParams,
     startList,
     resetList,

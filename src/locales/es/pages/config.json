@@ -2,6 +2,7 @@
   "general": {
     "title": "Configuración de la web",
     "titleGeneral": "Configuración general",
-    "languages": "Idioma"
+    "languages": "Idioma",
+    "printArmiesImages": "Imprimir imagen de lista"
   }
 }

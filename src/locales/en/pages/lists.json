@@ -3,7 +3,8 @@
     "title": "Lists",
     "nation": "Nation",
     "year": "Year",
-    "listName": "List name"
+    "listName": "List name",
+    "units": "Units"
   },
   "buttons": {
     "createList": "Create list",
@@ -16,5 +17,9 @@
   "paragraphs": {
     "selectNation": "Select a nation to continue",
     "selectYear": "Select a year to continue"
+  },
+  "data": {
+    "costs": "{n} point | {n} points",
+    "planes": "No planes | {n} plane | {n} planes"
   }
 }

@@ -1,0 +1,18 @@
+.list-items {
+  display       : flex;
+  margin-top    : $padding_xl;
+  flex-direction: column;
+
+  .units-inputs{
+    display: flex;
+    gap: $padding_sm;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 43rem) {
+  .list-items .units-inputs {
+    flex-direction: row;
+  }
+}

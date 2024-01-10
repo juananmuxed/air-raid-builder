@@ -1,24 +1,24 @@
 header {
   min-height: $size-header;
-  display        : flex;
+  display: flex;
   justify-content: space-between;
 
   .logo {
-    padding    : $padding_md;
+    padding: $padding_md;
     margin-left: $padding_xl;
 
     img {
-      width : 42px;
+      width: 42px;
       height: auto;
     }
   }
 
   nav {
     ul {
-      list-style    : none;
-      padding       : 0 $padding_md;
-      display       : flex;
-      flex-wrap     : nowrap;
+      list-style: none;
+      padding: 0 $padding_md;
+      display: flex;
+      flex-wrap: nowrap;
       flex-direction: column;
       justify-content: flex-end;
 
@@ -26,17 +26,17 @@ header {
         padding: $padding_xs $padding_sm;
         display: flex;
         justify-content: flex-end;
-        font-size : $font_size_menu;
+        font-size: $font_size_menu;
       }
     }
 
     select {
-      font-size       : $font_size_menu;
-      border          : none;
-      color           : $text-link__dark;
+      font-size: $font_size_menu;
+      border: none;
+      color: $text-link__dark;
       background-color: $text;
-      cursor          : pointer;
-      transition      : all $transition_ease;
+      cursor: pointer;
+      transition: all $transition_ease;
     }
   }
 }
@@ -44,7 +44,7 @@ header {
 .light {
   nav {
     select {
-      color           : $text-link;
+      color: $text-link;
       background-color: $text__dark;
     }
   }

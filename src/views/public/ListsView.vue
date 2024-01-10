@@ -23,7 +23,10 @@
       </div>
     </div>
     <div v-else class="sheet">
+      <ListData />
       <SheetOptions />
+      <ListItems />
+      <ListUnits />
     </div>
   </div>
 </template>
