@@ -4,7 +4,9 @@
     "nation": "Nación",
     "year": "Año",
     "listName": "Nombre de la lista",
-    "units": "Unidades"
+    "units": "Unidades",
+    "availablePlanes": "Aviones disponibles",
+    "specialAbilities": "Habilidades especiales"
   },
   "buttons": {
     "createList": "Crear lista",
@@ -20,6 +22,54 @@
   },
   "data": {
     "costs": "{n} punto | {n} puntos",
-    "planes": "Sin aviones | {n} avión | {n} aviones"
+    "planes": "Sin aviones | {n} avión | {n} aviones",
+    "hits": "Daño",
+    "speed": "Velocidad",
+    "agility": "Agilidad",
+    "firepower": "Potencia de fuego",
+    "maneuver": "Maniobrabilidad",
+    "pilots": {
+      "regular": "Regular",
+      "rookie": "Novato",
+      "veteran": "Veterano"
+    },
+    "specialAbilities": {
+      "emergencyBoost": "Impulso de emergencia",
+      "barrelRollBonus": "Bonificación a tonel",
+      "barrelRollPenalty": "Penalización a tonel",
+      "tightTurnPenalty": "Penalización por giro cerrado",
+      "tightTurnBonus": "Bonificación por giro cerrado",
+      "strafingBonus": "Bonificación a ametrallamiento",
+      "diveBombDamage": "Daño de bomba submarina",
+      "initiative": "Iniciativa",
+      "kamikaze": "Kamikaze",
+      "hineriKomi": "Hineri Komi",
+      "levelBombDamage": "Daño de bomba de nivel",
+      "frontGunner": "Artillero frontal",
+      "rearGunner": "Artillero trasero",
+      "turretGunner": "Artillero de torreta",
+      "sideGunner": "Artillero lateral",
+      "torpedoRange": "Rango de torpedo",
+      "unreliable": "Poco fiable",
+      "descriptions": {
+        "emergencyBoost": "Este avión puede exceder su velocidad máxima en 1, 2 o 3, pero no puede realizar ningún giro de hexágono ni maniobras especiales durante esta ronda de juego",
+        "barrelRollBonus": "Si este avión intenta realizar la maniobra especial 'Tonel', obtiene una bonificación de 1 o 2 en su resultado de tirada de 2D6",
+        "barrelRollPenalty": "Si este avión intenta realizar la maniobra especial 'Tonel', sufre una penalización de 1 o 2 en su resultado de tirada de 2D6",
+        "tightTurnPenalty": "Si este avión intenta realizar la maniobra especial 'Giro Cerrado', sufre una penalización de 1 o 2 en su resultado de tirada de 2D6",
+        "tightTurnBonus": "Si este avión intenta realizar la maniobra especial 'Giro Cerrado', obtiene una bonificación de 1 o 2 en su resultado de tirada de 2D6",
+        "strafingBonus": "Este avión es muy efectivo contra objetivos terrestres. La bonificación de ametrallamiento se duplica (Potencia de fuego B: +2, C: +4, D: +6)",
+        "diveBombDamage": "Este avión puede realizar ataques con bombas en picado y recibe una bonificación de 0, 1, 2 o 3 en la tirada de daño en la tabla de bombas en picado",
+        "initiative": "Este avión recibe una bonificación de 1 en la tirada de iniciativa. Esta bonificación se puede utilizar sólo una vez por ronda de juego, sin importar cuántos aviones haya con esta bonificación",
+        "kamikaze": "Este avión puede realizar ataques kamikaze. El avión se destruye automáticamente con su ataque kamikaze, independientemente de si el ataque fue exitoso o no",
+        "hineriKomi": "Este avión puede realizar la maniobra especial 'Hineri-Komi'",
+        "levelBombDamage": "Este avión puede realizar ataques con bombas de nivel y recibe una bonificación de 0, 1, 2 o 3 en la tirada de daño en la tabla de bombas de nivel",
+        "frontGunner": "Este avión está equipado con al menos un artillero frontal que tiene potencia de fuego A, B, C o D",
+        "rearGunner": "Este avión está equipado con al menos un artillero trasero que tiene potencia de fuego A, B, C o D",
+        "turretGunner": "Este avión está equipado con al menos un artillero de torreta que tiene potencia de fuego A, B, C o D",
+        "sideGunner": "Este avión está equipado con al menos un artillero lateral que tiene potencia de fuego A, B, C o D",
+        "torpedoRange": "Este avión puede realizar ataques con torpedos y está equipado con un torpedo con alcance de 2, 3 o 4",
+        "unreliable": "Este avión tiene un mayor riesgo de sufrir problemas técnicos y mal funcionamiento. Tira 2D6 antes del inicio de cada fase de movimiento: con 9 o más, solo está disponible la velocidad normal en esta ronda de juego y no se permiten maniobras especiales"
+      }
+    }
   }
 }

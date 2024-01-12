@@ -1,0 +1,20 @@
+.unit-cards {
+  margin-top: $padding_xl;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: $padding_sm;
+  margin-bottom: $padding_xl;
+}
+
+@media (min-width: $width-content) {
+  .unit-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media print {
+  .unit-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 0;
+  }
+}

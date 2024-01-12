@@ -2,11 +2,11 @@
   <div class="radio-group">
     <template v-for="(radio, index) in options" :key="index">
       <label
-        :for="radio.name?.toString()"
+        :for="radio.name?.toString() + (reference || '')"
         :class="radio.id == modelValue ? 'active' : ''"
       >
         <input
-          :id="radio.name?.toString()"
+          :id="radio.name?.toString() + (reference || '')"
           class="radio-input"
           type="radio"
           :value="radio.id"
@@ -24,7 +24,8 @@
 const emit = defineEmits(['update:modelValue']);
 
 defineProps<{
-  modelValue?: string;
+  modelValue?: string | number;
+  reference?: string;
   options: {
     name?: string | number;
     id?: string | number;
@@ -34,7 +35,8 @@ defineProps<{
 
 const updateValue = (event: Event) => {
   const target = event.target as HTMLInputElement;
-  emit('update:modelValue', target.value);
+  const _value = Number.isNaN(target.value) ? target.value : Number(target.value);
+  emit('update:modelValue', _value);
 };
 </script>
 

@@ -17,6 +17,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
+            git checkout main
             git restore .
             git pull origin main
             npm i

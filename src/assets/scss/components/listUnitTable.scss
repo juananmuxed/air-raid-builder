@@ -1,0 +1,114 @@
+.table {
+  width: 100%;
+  margin-top: $padding_xl;
+
+  &-header,
+  &-body {
+    display: block;
+    text-align: left;
+
+    .row {
+      display: block;
+      width: 100%;
+      position: relative;
+      border-top: 1px solid $bg-primary__dark;
+
+      :not(:last-child) {
+        border-right: 1px solid $bg-primary__dark;
+      }
+
+      .cell {
+        width: 16%;
+        padding: $padding_xs;
+        font-size: $font_size_p;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+        min-height: 32px;
+
+        &-wide {
+          width: 36%;
+        }
+
+        &-medium {
+          width: 25%;
+        }
+
+        &-small {
+          width: 20%;
+        }
+        &-full {
+          width: 100%;
+        }
+
+        &-slim {
+          min-height: auto;
+        }
+
+        &-center {
+          text-align: center;
+        }
+
+        &-right {
+          text-align: right;
+          padding-right: $padding_sm;
+        }
+
+        .options-buttons,
+        .flex {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          * {
+            margin: $padding_xxs;
+          }
+          &.column {
+            flex-direction: column;
+          }
+        }
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    &:last-child {
+      border-bottom: 1px solid $bg-primary__dark;
+    }
+  }
+
+  &-header {
+    font-weight: bold;
+
+    .row {
+      border-width: 2px;
+
+      .cell {
+        min-height: auto;
+      }
+    }
+  }
+}
+
+@media print {
+  .table {
+    margin-top: $padding_xs;
+
+    .row {
+      break-inside: avoid;
+
+      .cell {
+        break-inside: avoid;
+        font-size: $font_size_xs;
+        min-height: 18px;
+
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+}

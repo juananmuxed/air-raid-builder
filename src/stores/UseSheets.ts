@@ -9,6 +9,7 @@ import { POSITIONS } from 'src/constants/Positions';
 import { SEPARATORS } from 'src/constants/Separators';
 import { t } from 'src/plugins/I18n';
 import { useToastStore } from './UseToasts';
+import { useListsStore } from './UseLists';
 
 export const useSheetsStore = defineStore('sheets', () => {
   const nations = useNations();
@@ -16,6 +17,7 @@ export const useSheetsStore = defineStore('sheets', () => {
   const planes = usePlanes();
   const format = useFormatProperties();
   const toasts = useToastStore();
+  const lists = useListsStore();
 
   const nation = ref();
   const year = ref();
@@ -91,6 +93,7 @@ export const useSheetsStore = defineStore('sheets', () => {
       listName.value,
       nation.value,
       year.value,
+      lists.compactUnits,
     ], SEPARATORS.SHEET);
   }
 
@@ -112,6 +115,7 @@ export const useSheetsStore = defineStore('sheets', () => {
     year.value = undefined;
     nation.value = undefined;
     listName.value = '';
+    lists.units = [];
     creatingList.value = false;
   }
 
@@ -151,11 +155,13 @@ export const useSheetsStore = defineStore('sheets', () => {
 
   async function initLoad() {
     getUriParams();
+    const _compact = listCompact.value;
     if (listCompact.value !== '') setList();
     await nations.getNationsSelect.execute();
     if (nation.value) await nationYears.getYearsByNationSelect.execute(nation.value);
     if (nation.value && year.value) {
       await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
+      lists.setUnitsCompact(format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.UNITS));
       creatingList.value = true;
     }
     updateUriParams();
@@ -177,6 +183,7 @@ export const useSheetsStore = defineStore('sheets', () => {
     nationComplete,
     yearComplete,
     getUriParams,
+    updateUriParams,
     startList,
     resetList,
     printList,

@@ -1,6 +1,6 @@
 <template>
   <div class="list-items no-print">
-    <h4>{{ $t("pages.lists.general.units") }}</h4>
+    <h4>{{ $t("pages.lists.general.availablePlanes") }}</h4>
     <div class="units-inputs">
       <UnitInput
         v-for="(unit, index) in sheets.availablePlanes"

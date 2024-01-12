@@ -27,13 +27,20 @@
       <SheetOptions />
       <ListItems />
       <ListUnits />
+      <ExtraData
+        v-if="lists.hasSpecialAbilities"
+        :title="$t('pages.lists.general.specialAbilities')"
+        :items="lists.specialAbilities"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useListsStore } from 'src/stores/UseLists';
 import { useSheetsStore } from 'src/stores/UseSheets';
 
+const lists = useListsStore();
 const sheets = useSheetsStore();
 
 sheets.initLoad();

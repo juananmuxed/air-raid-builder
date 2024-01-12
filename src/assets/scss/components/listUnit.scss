@@ -1,0 +1,44 @@
+.unit-card {
+  padding: $padding_md;
+  border-radius: $rounded;
+  border: 2px solid $bg-primary__dark;
+
+  .unit-title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: $font_size_h6;
+    margin-bottom: $padding_md;
+  }
+
+  .pilot-select {
+    margin-top: $padding_md;
+
+    .pilot-selector {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .abilities {
+    .ability-items {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: $padding_sm;
+    }
+  }
+}
+
+@media print {
+  .unit-card {
+    .unit-title {
+      font-size: $font_size_small;
+    }
+
+    .abilities {
+      margin-top: $padding_sm;
+    }
+  }
+}

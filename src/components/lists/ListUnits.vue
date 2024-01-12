@@ -1,6 +1,11 @@
 <template>
-  <div v-for="(unit, index) in lists.units" :key="unit.id + index + '-plane'">
-    {{ unit.designation }}
+  <div class="unit-cards">
+    <ListUnit
+      v-for="(unit, index) in lists.units"
+      :key="unit.id + index + '-plane'"
+      :unit="unit"
+      :index="index"
+    />
   </div>
 </template>
 
@@ -10,6 +15,4 @@ import { useListsStore } from 'src/stores/UseLists';
 const lists = useListsStore();
 </script>
 
-<style scoped>
-
-</style>
+<style scoped src="src/assets/scss/components/listUnits.scss"></style>

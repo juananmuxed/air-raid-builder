@@ -1,0 +1,20 @@
+.extra-data {
+  margin-top: $padding_sm;
+
+  & > :not(:last-child) {
+    border-bottom: 1px solid $bg-primary__dark;
+  }
+
+  .item {
+    padding: $padding_sm 0;
+
+    .title {
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .description {
+      margin-bottom: $padding_sm;
+    }
+  }
+}

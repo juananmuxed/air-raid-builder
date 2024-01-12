@@ -7,10 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.2.0]
+
+### Add
+- List creator completed
+
+### Fix
+- Minor errors
+
 ## [v1.0.1]
 
 ### Fix
-
 - Image load error
 - Old template mentions
 
@@ -20,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Version 1.0.0 published!
 
-[Unreleased]: https://github.com/juananmuxed/air-raid-builder/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/juananmuxed/air-raid-builder/compare/v1.2.0...HEAD
+[v1.2.0]: https://github.com/juananmuxed/air-raid-builder/releases/tag/v1.2.0
 [v1.0.1]: https://github.com/juananmuxed/air-raid-builder/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/juananmuxed/air-raid-builder/releases/tag/v1.0.0

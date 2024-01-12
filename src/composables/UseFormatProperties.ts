@@ -1,8 +1,11 @@
 import { Cost } from 'src/models/api/Costs';
 import { NationYear } from 'src/models/api/NationYears';
-import { Plane } from 'src/models/api/Planes';
+import { Plane, UnitPlane } from 'src/models/api/Planes';
 import { SpecialAbility } from 'src/models/api/SpecialAbilities';
 import { Stat } from 'src/models/api/Stats';
+
+import { PILOTS_ABILITIES } from 'src/constants/PilotsAbilities';
+import { t } from 'src/plugins/I18n';
 
 export const useFormatProperties = () => {
   const setMinMax = (min?: number, max?: number) => {
@@ -23,7 +26,7 @@ export const useFormatProperties = () => {
     return !cost ? '' : setSeparator([cost.rookie, cost.regular, cost.veteran]);
   };
 
-  const setAgility = (stat: Stat) => setSeparator([stat.agilityRegular || '-', stat.agilityMaximum || '-']);
+  const setAgility = (stat?: Stat) => (!stat ? '' : setSeparator([stat.agilityRegular || '-', stat.agilityMaximum || '-']));
 
   const setManeuverRookie = (stat: Stat) => setSeparator([stat.maneuverRookieRegular || '-', stat.maneuverRookieMaximum || '-']);
 
@@ -31,7 +34,27 @@ export const useFormatProperties = () => {
 
   const setManeuverVeteran = (stat: Stat) => setSeparator([stat.maneuverVeteranRegular || '-', stat.maneuverVeteranMaximum || '-']);
 
-  const setSpeed = (stat: Stat) => {
+  const setManeuver = (stat?: Stat, pilot?: PILOTS_ABILITIES) => {
+    if (!stat) return '';
+    let maneuver = '';
+    switch (pilot) {
+      case PILOTS_ABILITIES.ROOKIE:
+        maneuver = setManeuverRookie(stat);
+        break;
+      case PILOTS_ABILITIES.REGULAR:
+        maneuver = setManeuverRegular(stat);
+        break;
+      case PILOTS_ABILITIES.VETERAN:
+        maneuver = setManeuverVeteran(stat);
+        break;
+      default:
+        break;
+    }
+    return maneuver;
+  };
+
+  const setSpeed = (stat?: Stat) => {
+    if (!stat) return '';
     return setSeparator([
       setMinMax(stat.speedMinRegular, stat.speedMaxRegular),
       setMinMax(stat.speedMinMaximum, stat.speedMaxMaximum)]);
@@ -72,6 +95,42 @@ export const useFormatProperties = () => {
     return `${ability.name}${(ability.valueNumber || ability.valueString) ? ` (${ability.valueNumber || ability.valueString})` : ''}`;
   };
 
+  const setPilot = (plane?: UnitPlane) => {
+    if (!plane) return '';
+    return PILOTS_ABILITIES[plane.pilot];
+  };
+
+  function getUnitCost(unit: UnitPlane) {
+    let cost = 0;
+    switch (unit.pilot) {
+      case PILOTS_ABILITIES.ROOKIE:
+        cost = unit.cost.rookie;
+        break;
+      case PILOTS_ABILITIES.REGULAR:
+        cost = unit.cost.regular;
+        break;
+      case PILOTS_ABILITIES.VETERAN:
+        cost = unit.cost.veteran;
+        break;
+      default:
+        cost = 0;
+        break;
+    }
+    return cost;
+  }
+
+  function setTranslateSpecialAbility(ability: SpecialAbility, addValue = true) {
+    let name = t(`pages.lists.data.specialAbilities.${ability.name}`);
+    const description = t(`pages.lists.data.specialAbilities.descriptions.${ability.name}`);
+    if (ability.valueNumber && addValue) {
+      name = `${name} (${ability.valueNumber})`;
+    }
+    if (ability.valueString && addValue) {
+      name = `${name} (${ability.valueString})`;
+    }
+    return { name, description };
+  }
+
   return {
     setSeparator,
     splitSeparator,
@@ -81,10 +140,14 @@ export const useFormatProperties = () => {
     setManeuverRookie,
     setManeuverRegular,
     setManeuverVeteran,
+    setManeuver,
     setStatsLabel,
     setCompletePlaneName,
     setYears,
     setNationYearLabel,
     setAbilityName,
+    setPilot,
+    getUnitCost,
+    setTranslateSpecialAbility,
   };
 };

@@ -1,5 +1,5 @@
 export const SEPARATORS = {
   SHEET: '_',
-  PLANES: '-',
+  UNITS: '-',
   OPTIONS: 'x',
 } as const;

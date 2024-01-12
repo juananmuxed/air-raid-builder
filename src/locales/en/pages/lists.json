@@ -4,7 +4,9 @@
     "nation": "Nation",
     "year": "Year",
     "listName": "List name",
-    "units": "Units"
+    "units": "Units",
+    "availablePlanes": "Available planes",
+    "specialAbilities": "Special abilities"
   },
   "buttons": {
     "createList": "Create list",
@@ -20,6 +22,54 @@
   },
   "data": {
     "costs": "{n} point | {n} points",
-    "planes": "No planes | {n} plane | {n} planes"
+    "planes": "No planes | {n} plane | {n} planes",
+    "hits": "Hits",
+    "speed": "Speed",
+    "agility": "Agility",
+    "firepower": "Firepower",
+    "maneuver": "Maneuver",
+    "pilots": {
+      "regular": "Regular",
+      "rookie": "Rookie",
+      "veteran": "Veteran"
+    },
+    "specialAbilities": {
+      "emergencyBoost": "Emergency boost",
+      "barrelRollBonus": "Barrel roll bonus",
+      "barrelRollPenalty": "Barrel roll penalty",
+      "tightTurnPenalty": "Tight turn penalty",
+      "tightTurnBonus": "Tight turn penalty",
+      "strafingBonus": "Strafing bonus",
+      "diveBombDamage": "Dive bomb damage",
+      "initiative": "Initiative",
+      "kamikaze": "Kamikaze",
+      "hineriKomi": "Hineri-Komi",
+      "levelBombDamage": "Level bomb damage",
+      "frontGunner": "Front gunner",
+      "rearGunner": "Rear gunner",
+      "turretGunner": "Turret gunner",
+      "sideGunner": "Side gunner",
+      "torpedoRange": "Torpedo range",
+      "unreliable": "Unreliable",
+      "descriptions": {
+        "emergencyBoost": "This aircraft may exceed its maximum speed by 1, 2 or 3, but may not perform any hex turns or special maneuvers during this game round",
+        "barrelRollBonus": "If this aircraft attempts to perform the special maneuver 'Barrel Roll', it gets a bonus of 1 or 2 for its 2D6 dice roll result",
+        "barrelRollPenalty": "If this aircraft attempts to perform the special maneuver 'Barrel Roll', it suffers a penalty of 1 or 2 for its 2D6 dice roll result",
+        "tightTurnPenalty": "If this aircraft attempts to perform the special maneuver 'Tight Turn', it suffers a penalty of 1 or 2 for its 2D6 dice roll result",
+        "tightTurnBonus": "If this aircraft attempts to perform the special maneuver 'Tight Turn', it gets a bonus of 1 or 2 for its 2D6 dice roll result",
+        "strafingBonus": "This aircraft is very effective against ground targets. The strafing bonus is doubled (Firepower B: +2, C: +4, D: +6)",
+        "diveBombDamage": "This aircraft can perform dive bomb attacks and receives a bonus of 0, 1, 2 or 3 on the damage dice roll on the dive bomb table",
+        "initiative": "This aircraft receive a bonus of 1 on the initiative roll. This bonus can be used only once per game round, no matter how many aircraft there are with this bonus",
+        "kamikaze": "This aircraft can be perform kamikaze attacks. The aircraft is automatically destroyed with its kamikaze attack - regardless of whether the attack was successful or not",
+        "hineriKomi": "This aircraft can be perform the special maneuver 'Hineri-Komi'",
+        "levelBombDamage": "This aircraft can carry out level bombs attacks and receives a bonus of 0, 1, 2 or 3 on the damage dice roll on the level bomb table",
+        "frontGunner": "This aircraft is equipped with at least one front gunner that has a firepower A, B, C or D",
+        "rearGunner": "This aircraft is equipped with at least one rear gunner that has a firepower A, B, C or D",
+        "turretGunner": "This aircraft is equipped with at least one turret gunner that has a firepower A, B, C or D",
+        "sideGunner": "This aircraft is equipped with at least one side gunner that has a firepower A, B, C or D",
+        "torpedoRange": "This aircraft can carry out torpedo attacks and is equipped with a torpedo with range of 2, 3 or 4",
+        "unreliable": "This aircraft has an increased risk of technical problems and malfunctions. Roll 2D6 before the start of each movement phase: At 9 or more only normal speed is available in this game round and no special maneuvers are allowed"
+      }
+    }
   }
 }

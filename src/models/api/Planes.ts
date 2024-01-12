@@ -13,14 +13,18 @@ export type Plane = {
   aircraftClassId: number;
   class: AircraftClass;
   statZeroId: number;
-  statZero: Stat;
+  statZero?: Stat;
   statOneId: number;
-  statOne: Stat;
+  statOne?: Stat;
   statTwoId: number;
-  statTwo: Stat;
+  statTwo?: Stat;
   statThreeId: number;
-  statThree: Stat;
+  statThree?: Stat;
   specialAbilities?: SpecialAbility[];
   specialAbilitiesVeteran?: SpecialAbility[];
   nationYears?: NationYear[];
+}
+
+export type UnitPlane = Plane & {
+  pilot: number;
 }

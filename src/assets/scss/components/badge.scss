@@ -35,3 +35,9 @@
     padding: $padding_xxs $padding_xs;
   }
 }
+
+@media print {
+  .badge {
+    border-width: 1px !important;
+  }
+}
