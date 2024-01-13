@@ -9,12 +9,21 @@
         :options="langs"
       />
     </div>
+    <h3>{{ $t('pages.config.general.titlePrint') }}</h3>
     <div class="config-item">
       <CheckboxComponent
         id="printArmiesImages"
         v-model="options.printArmiesImages"
       >
         {{ $t("pages.config.general.printArmiesImages") }}
+      </CheckboxComponent>
+    </div>
+    <div class="config-item">
+      <CheckboxComponent
+        id="printSpecialAbilities"
+        v-model="options.printSpecialAbilities"
+      >
+        {{ $t("pages.config.general.printSpecialAbilities") }}
       </CheckboxComponent>
     </div>
   </div>
@@ -37,3 +46,5 @@ watch(lang, (newValue) => {
   loadLanguageAsync(newValue || 'en');
 });
 </script>
+
+<style scoped src="src/assets/scss/components/config.scss"></style>

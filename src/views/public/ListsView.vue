@@ -28,7 +28,7 @@
       <ListItems />
       <ListUnits />
       <ExtraData
-        v-if="lists.hasSpecialAbilities"
+        v-if="lists.hasSpecialAbilities && options.printSpecialAbilities"
         :title="$t('pages.lists.general.specialAbilities')"
         :items="lists.specialAbilities"
       />
@@ -38,10 +38,12 @@
 
 <script setup lang="ts">
 import { useListsStore } from 'src/stores/UseLists';
+import { useOptionsStore } from 'src/stores/UseOptions';
 import { useSheetsStore } from 'src/stores/UseSheets';
 
 const lists = useListsStore();
 const sheets = useSheetsStore();
+const options = useOptionsStore();
 
 sheets.initLoad();
 </script>

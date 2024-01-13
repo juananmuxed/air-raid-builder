@@ -3,6 +3,8 @@
     "title": "Web configuration",
     "titleGeneral": "General configuration",
     "languages": "Languages",
-    "printArmiesImages": "Print armies images"
+    "printArmiesImages": "Print armies images",
+    "printSpecialAbilities": "Print special abilities",
+    "titlePrint": "Print configuration"
   }
 }

@@ -3,6 +3,8 @@
     "title": "Configuración de la web",
     "titleGeneral": "Configuración general",
     "languages": "Idioma",
-    "printArmiesImages": "Imprimir imagen de lista"
+    "printArmiesImages": "Imprimir imagen de lista",
+    "printSpecialAbilities": "Imprimir habilidades especiales",
+    "titlePrint": "Configuración de impresión"
   }
 }
