@@ -1,6 +1,6 @@
 {
   "name": "air-raid-builder",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "repository": "juananmuxed/air-raid-builder",
   "type": "module",
   "scripts": {
