@@ -72,6 +72,18 @@
           width: 18px;
           height: 18px;
         }
+
+        &.wound {
+          &_yellow {
+            background-color: $bg-special__wounds_yellow;
+          }
+          &_red {
+            background-color: $bg-special__wounds_red;
+          }
+          &_destroyed {
+            background-color: $bg-special__wounds_destroyed;
+          }
+        }
       }
     }
     &:last-child {
@@ -103,6 +115,8 @@
         break-inside: avoid;
         font-size: $font_size_xs;
         min-height: 18px;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
 
         svg {
           width: 12px;

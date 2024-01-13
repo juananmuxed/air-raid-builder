@@ -2,13 +2,13 @@
   <div class="unit-card">
     <div class="unit-title">
       <b>{{ unit.designation }}</b>
-      <BadgeComponent color="primary" outlined small>
+      <BadgeComponent :color="format.getPilotColor(unit)" outlined small>
         {{ unit.nickname }}
       </BadgeComponent>
     </div>
     <UnitTable :unit="unit" />
     <div class="pilot-select">
-      <BadgeComponent color="primary" outlined small>
+      <BadgeComponent :color="format.getPilotColor(unit)" outlined small>
         {{
           `${$t('pages.lists.data.pilots.' + format.setPilot(unit).toLowerCase())}
           (${$t('pages.lists.data.costs', format.getUnitCost(unit))})`

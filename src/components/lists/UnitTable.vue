@@ -8,13 +8,13 @@
         <div class="cell cell-center">
           0
         </div>
-        <div class="cell cell-center">
+        <div class="cell cell-center" :class="format.getWoundColor(unit, 1)">
           1
         </div>
-        <div class="cell cell-center">
+        <div class="cell cell-center" :class="format.getWoundColor(unit, 2)">
           2
         </div>
-        <div class="cell cell-center">
+        <div class="cell cell-center" :class="format.getWoundColor(unit)">
           3
         </div>
       </div>

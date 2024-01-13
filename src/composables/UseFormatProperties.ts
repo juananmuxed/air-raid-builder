@@ -100,7 +100,7 @@ export const useFormatProperties = () => {
     return PILOTS_ABILITIES[plane.pilot];
   };
 
-  function getUnitCost(unit: UnitPlane) {
+  const getUnitCost = (unit: UnitPlane) => {
     let cost = 0;
     switch (unit.pilot) {
       case PILOTS_ABILITIES.ROOKIE:
@@ -117,9 +117,25 @@ export const useFormatProperties = () => {
         break;
     }
     return cost;
-  }
+  };
 
-  function setTranslateSpecialAbility(ability: SpecialAbility, addValue = true) {
+  const getPilotColor = (unit: UnitPlane) => {
+    if (unit.pilot === PILOTS_ABILITIES.ROOKIE) return 'pilot_rookie';
+    if (unit.pilot === PILOTS_ABILITIES.VETERAN) return 'pilot_veteran';
+    return '';
+  };
+
+  const getWoundColor = (unit: UnitPlane, wound?: number) => {
+    if (!wound) return 'wound_destroyed';
+    if (wound === 1) {
+      if (unit.statTwo) return 'wound_yellow';
+      return 'wound_red';
+    }
+    if (wound === 2) return !unit.statTwo ? 'wound_destroyed' : 'wound_red';
+    return '';
+  };
+
+  const setTranslateSpecialAbility = (ability: SpecialAbility, addValue = true) => {
     let name = t(`pages.lists.data.specialAbilities.${ability.name}`);
     const description = t(`pages.lists.data.specialAbilities.descriptions.${ability.name}`);
     if (ability.valueNumber && addValue) {
@@ -129,7 +145,7 @@ export const useFormatProperties = () => {
       name = `${name} (${ability.valueString})`;
     }
     return { name, description };
-  }
+  };
 
   return {
     setSeparator,
@@ -148,6 +164,8 @@ export const useFormatProperties = () => {
     setAbilityName,
     setPilot,
     getUnitCost,
+    getPilotColor,
+    getWoundColor,
     setTranslateSpecialAbility,
   };
 };

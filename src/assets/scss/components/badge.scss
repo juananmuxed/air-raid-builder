@@ -30,6 +30,15 @@
     border: 2px solid $bg-primary__dark;
   }
 
+  &.pilot {
+    &_veteran {
+      background-color: $bg-special__veteran;
+    }
+    &_rookie {
+      background-color: $bg-special__rookie;
+    }
+  }
+
   &.small {
     border-width: 1px;
     padding: $padding_xxs $padding_xs;
@@ -39,5 +48,7 @@
 @media print {
   .badge {
     border-width: 1px !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
