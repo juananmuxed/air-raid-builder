@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fix
+- RadioGroup when string values error
+
 ## [v1.2.0]
 
 ### Add

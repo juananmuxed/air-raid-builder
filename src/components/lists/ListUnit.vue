@@ -14,7 +14,12 @@
           (${$t('pages.lists.data.costs', format.getUnitCost(unit))})`
         }}
       </BadgeComponent>
-      <RadioGroup v-model="pilot" :options="options" class="pilot-selector no-print" :reference="index.toString()" />
+      <RadioGroup
+        v-model="pilot"
+        :options="options"
+        class="pilot-selector no-print"
+        :reference="index.toString()"
+      />
     </div>
     <div class="abilities">
       <b>{{ $t('pages.lists.general.specialAbilities') }}</b>

@@ -21,7 +21,10 @@
 </template>
 
 <script setup lang="ts">
+import { is } from 'src/utils/Is';
+
 const emit = defineEmits(['update:modelValue']);
+const _is = is();
 
 defineProps<{
   modelValue?: string | number;
@@ -35,7 +38,7 @@ defineProps<{
 
 const updateValue = (event: Event) => {
   const target = event.target as HTMLInputElement;
-  const _value = Number.isNaN(target.value) ? target.value : Number(target.value);
+  const _value = _is.string(target.value) ? target.value : Number(target.value);
   emit('update:modelValue', _value);
 };
 </script>
