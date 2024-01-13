@@ -12,16 +12,6 @@
             }}
           </RouterLink>
         </li>
-        <li v-if="!user.validToken">
-          <RouterLink :to="{ name: 'login' }">
-            {{ $t('menu.login') }}
-          </RouterLink>
-        </li>
-        <li v-else>
-          <RouterLink :to="{ name: 'home' }">
-            {{ $t('menu.admin') }}
-          </RouterLink>
-        </li>
       </ul>
     </nav>
   </header>
@@ -31,10 +21,6 @@
 import { RouterLink } from 'vue-router';
 
 import { getPublicMenu } from 'src/router/MenuRoutes';
-import { useUserStore } from 'src/stores/UseUserStore';
-
-const user = useUserStore();
-
 </script>
 
 <style lang="scss" scoped src="src/assets/scss/components/header.scss"></style>

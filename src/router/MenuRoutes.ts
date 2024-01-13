@@ -9,6 +9,7 @@ export type IMenuItem = {
   // eslint-disable-next-line no-use-before-define
   children?: IMenuItem[];
   roles?: number[];
+  noMenu?: boolean;
 }
 type Menu = IMenuItem[]
 
@@ -206,6 +207,7 @@ function routeToMenu(route: RouteRecordRaw) {
     url: hasChildren ? undefined : route.name,
     roles: route.meta?.roles,
     children: activeChildren?.map(routeToMenu).filter((child) => child) as Menu,
+    noMenu: route.meta?.noMenu,
   } as IMenuItem;
 
   const hasActiveChildren = !!item.children?.length;
@@ -225,6 +227,7 @@ function routeToMenu(route: RouteRecordRaw) {
 
         item.titleTag = activeChild.meta?.titleTag || activeChild.name?.toString() || '';
         item.icon = activeChild.meta?.icon;
+        item.noMenu = activeChild.meta?.noMenu;
         item.url = subChildren?.length ? undefined : activeChild.name?.toString();
         item.children = subChildren?.map(routeToMenu).filter((child) => child) as Menu;
       }

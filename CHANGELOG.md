@@ -10,10 +10,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Add
 - Print special abilities option in config
 - Colors to cards
+- 'All' button for year selector
+
+### Edit
+- Move admin menu to footer
 
 ### Fix
 - RadioGroup when string values error
 - String to number in pilot selector
+- Starting load lists
 
 ## [v1.2.0]
 

@@ -1,6 +1,6 @@
 export enum POSITIONS {
-  LIST_NAME = 0,
-  NATION = 1,
-  YEAR = 2,
+  NATION = 0,
+  YEAR = 1,
+  LIST_NAME = 2,
   UNITS = 3,
 }

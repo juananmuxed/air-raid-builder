@@ -10,6 +10,7 @@ import { SEPARATORS } from 'src/constants/Separators';
 import { t } from 'src/plugins/I18n';
 import { useToastStore } from './UseToasts';
 import { useListsStore } from './UseLists';
+import { is } from 'src/utils/Is';
 
 export const useSheetsStore = defineStore('sheets', () => {
   const nations = useNations();
@@ -18,6 +19,7 @@ export const useSheetsStore = defineStore('sheets', () => {
   const format = useFormatProperties();
   const toasts = useToastStore();
   const lists = useListsStore();
+  const _is = is();
 
   const nation = ref();
   const year = ref();
@@ -33,10 +35,16 @@ export const useSheetsStore = defineStore('sheets', () => {
     name: t(`database.nations.${_nation.name}`),
     imgUrl: `/img/nations/${_nation.imgUrl}`,
   })));
-  const selectYears = computed(() => nationYears.getYearsByNationSelect.data.map((_year) => ({
-    id: _year.id,
-    name: _year.year,
-  })));
+  const selectYears = computed(() => {
+    const _years = [{ name: t('pages.lists.buttons.allYears'), id: -1 }];
+    nationYears.getYearsByNationSelect.data.forEach((_year) => (
+      _years.push({
+        id: _year.id,
+        name: _year.year.toString(),
+      })
+    ));
+    return _years;
+  });
   const availablePlanes = computed(() => planes.getPlanesByNationAndYear.data);
 
   const loading = computed(() => nationYears.getYearsByNationSelect.isFetching
@@ -80,19 +88,17 @@ export const useSheetsStore = defineStore('sheets', () => {
   function getUriParams() {
     const url = new URL(window.location.href);
     listCompact.value = url.searchParams.get('id') || '';
-  }
-
-  function setList() {
-    listName.value = format.splitSeparator(listCompact.value, SEPARATORS.SHEET).at(POSITIONS.LIST_NAME) || '';
-    nation.value = format.splitSeparator(listCompact.value, SEPARATORS.SHEET).at(POSITIONS.NATION);
-    year.value = format.splitSeparator(listCompact.value, SEPARATORS.SHEET).at(POSITIONS.YEAR);
+    return listCompact.value;
   }
 
   function compactList() {
+    const _name = _is.nullOrUndefined(listName.value) ? '' : listName.value;
+    const _nation = _is.nullOrUndefined(nation.value) ? undefined : nation.value;
+    const _year = _is.nullOrUndefined(year.value) ? undefined : year.value;
     listCompact.value = format.setSeparator([
-      listName.value,
-      nation.value,
-      year.value,
+      _nation,
+      _year,
+      _name,
       lists.compactUnits,
     ], SEPARATORS.SHEET);
   }
@@ -107,7 +113,7 @@ export const useSheetsStore = defineStore('sheets', () => {
       return;
     }
     await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
-
+    listName.value = t('pages.lists.general.newList', Object.keys(savedLists).length + 1);
     creatingList.value = true;
   }
 
@@ -154,15 +160,24 @@ export const useSheetsStore = defineStore('sheets', () => {
   }
 
   async function initLoad() {
-    getUriParams();
-    const _compact = listCompact.value;
-    if (listCompact.value !== '') setList();
-    await nations.getNationsSelect.execute();
-    if (nation.value) await nationYears.getYearsByNationSelect.execute(nation.value);
-    if (nation.value && year.value) {
-      await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
-      lists.setUnitsCompact(format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.UNITS));
-      creatingList.value = true;
+    const _compact = getUriParams();
+    if (_compact !== '') {
+      await nations.getNationsSelect.execute();
+      nation.value = format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.NATION);
+      if (nation.value) {
+        await nationYears.getYearsByNationSelect.execute(nation.value);
+        year.value = format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.YEAR);
+        listName.value = format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.LIST_NAME) || '';
+        if (nation.value && year.value) {
+          await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
+          lists.setUnitsCompact(format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.UNITS));
+          if (listName.value || lists.units.length > 0) {
+            creatingList.value = true;
+          }
+        }
+      }
+    } else {
+      await nations.getNationsSelect.execute();
     }
     updateUriParams();
   }

@@ -16,8 +16,8 @@ export const useListsStore = defineStore('lists', () => {
   const unitsTotal = computed(() => units.value.length);
   const costTotal = computed(() => units.value.reduce((prev, current) => prev + format.getUnitCost(current), 0));
 
-  const compactUnits = computed(() => format.setSeparator(units.value
-    .map((unit) => format.setSeparator([unit.id, unit.pilot], SEPARATORS.OPTIONS)), SEPARATORS.UNITS));
+  const compactUnits = computed(() => (units.value.length > 0 ? format.setSeparator(units.value
+    .map((unit) => format.setSeparator([unit.id, unit.pilot], SEPARATORS.OPTIONS)), SEPARATORS.UNITS) : undefined));
 
   const specialAbilities = computed(() => {
     let _specialAbilities: SpecialAbility[] = [];
