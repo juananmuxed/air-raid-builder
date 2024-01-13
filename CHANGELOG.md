@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Add
 - Print special abilities option in config
+- Colors to cards
 
 ### Fix
 - RadioGroup when string values error
