@@ -12,8 +12,8 @@ const axiosApi = axios.create({
 const controllersWithoutAuth = ['auth'];
 const endpointsWithoutAuth = [
   { url: 'nations$', method: 'get' },
-  { url: 'nationYears/nation/[0-9]+', method: 'get' },
-  { url: 'planes/nation/[0-9]+/year/[0-9]+', method: 'get' },
+  { url: 'nationYears/nation/-?[0-9]+', method: 'get' },
+  { url: 'planes/nation/-?[0-9]+/year/-?[0-9]+', method: 'get' },
 ];
 
 axiosApi.interceptors.request.use(async (config) => {
