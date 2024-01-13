@@ -68,7 +68,7 @@ const props = defineProps<{
 const pilot = ref(props.unit.pilot);
 
 watch(pilot, (newValue) => {
-  lists.changePilot(newValue, props.index);
+  lists.changePilot(Number(newValue), props.index);
 });
 </script>
 

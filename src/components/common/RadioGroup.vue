@@ -38,8 +38,7 @@ defineProps<{
 
 const updateValue = (event: Event) => {
   const target = event.target as HTMLInputElement;
-  const _value = _is.string(target.value) ? target.value : Number(target.value);
-  emit('update:modelValue', _value);
+  emit('update:modelValue', target.value);
 };
 </script>
 

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fix
 - RadioGroup when string values error
+- String to number in pilot selector
 
 ## [v1.2.0]
 
