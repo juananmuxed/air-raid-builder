@@ -25,7 +25,8 @@
     {
       "title": "News",
       "list": [
-        "Version 1.0.0 released!"
+        "Added colors & save functions",
+        "Fixed minor & major bugs"
       ]
     }
   ]
