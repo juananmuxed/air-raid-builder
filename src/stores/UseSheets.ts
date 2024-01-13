@@ -26,6 +26,7 @@ export const useSheetsStore = defineStore('sheets', () => {
   const creatingList = ref(false);
   const listName = ref('');
   const listCompact = ref('');
+  const selectedSavedList: Ref<string | undefined> = ref();
   const savedLists: Ref<Record<string, string>> = ref(
     JSON.parse(localStorage.getItem(LOCAL_STORAGE.LISTS) || '{}'),
   );
@@ -46,6 +47,18 @@ export const useSheetsStore = defineStore('sheets', () => {
     return _years;
   });
   const availablePlanes = computed(() => planes.getPlanesByNationAndYear.data);
+
+  const availableSavedLists = computed(() => {
+    return Object.keys(savedLists.value).map((key) => {
+      return {
+        id: key,
+        name: key,
+        active: true,
+      };
+    });
+  });
+
+  const hasSavedLists = computed(() => availableSavedLists.value.length > 0);
 
   const loading = computed(() => nationYears.getYearsByNationSelect.isFetching
   || nations.getNationsSelect.isFetching
@@ -113,7 +126,7 @@ export const useSheetsStore = defineStore('sheets', () => {
       return;
     }
     await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
-    listName.value = t('pages.lists.general.newList', Object.keys(savedLists).length + 1);
+    listName.value = t('pages.lists.general.newList', availableSavedLists.value.length + 1);
     creatingList.value = true;
   }
 
@@ -144,6 +157,17 @@ export const useSheetsStore = defineStore('sheets', () => {
     });
   }
 
+  function loadList() {
+    listCompact.value = savedLists.value[selectedSavedList.value || ''];
+    setCompactList(listCompact.value);
+    selectedSavedList.value = undefined;
+    toasts.addToast({
+      text: t('success.saveList'),
+      color: 'success',
+      time: 4000,
+    });
+  }
+
   function copyUrl() {
     const url = new URL(window.location.href);
     url.searchParams.set('id', listCompact.value);
@@ -162,24 +186,28 @@ export const useSheetsStore = defineStore('sheets', () => {
   async function initLoad() {
     const _compact = getUriParams();
     if (_compact !== '') {
-      await nations.getNationsSelect.execute();
-      nation.value = format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.NATION);
-      if (nation.value) {
-        await nationYears.getYearsByNationSelect.execute(nation.value);
-        year.value = format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.YEAR);
-        listName.value = format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.LIST_NAME) || '';
-        if (nation.value && year.value) {
-          await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
-          lists.setUnitsCompact(format.splitSeparator(_compact, SEPARATORS.SHEET).at(POSITIONS.UNITS));
-          if (listName.value || lists.units.length > 0) {
-            creatingList.value = true;
-          }
-        }
-      }
+      await setCompactList(_compact);
     } else {
       await nations.getNationsSelect.execute();
     }
     updateUriParams();
+  }
+
+  async function setCompactList(compact: string) {
+    await nations.getNationsSelect.execute();
+    nation.value = format.splitSeparator(compact, SEPARATORS.SHEET).at(POSITIONS.NATION);
+    if (nation.value) {
+      await nationYears.getYearsByNationSelect.execute(nation.value);
+      year.value = format.splitSeparator(compact, SEPARATORS.SHEET).at(POSITIONS.YEAR);
+      listName.value = format.splitSeparator(compact, SEPARATORS.SHEET).at(POSITIONS.LIST_NAME) || '';
+      if (nation.value && year.value) {
+        await planes.getPlanesByNationAndYear.execute(nation.value, year.value);
+        lists.setUnitsCompact(format.splitSeparator(compact, SEPARATORS.SHEET).at(POSITIONS.UNITS));
+        if (listName.value || lists.units.length > 0) {
+          creatingList.value = true;
+        }
+      }
+    }
   }
 
   return {
@@ -187,9 +215,12 @@ export const useSheetsStore = defineStore('sheets', () => {
     year,
     creatingList,
     listName,
+    hasSavedLists,
     selectNations,
     selectYears,
+    selectedSavedList,
     availablePlanes,
+    availableSavedLists,
     hasNation,
     hasNationAndYear,
     loading,
@@ -204,6 +235,7 @@ export const useSheetsStore = defineStore('sheets', () => {
     printList,
     initLoad,
     saveList,
+    loadList,
     deleteList,
     copyUrl,
   };

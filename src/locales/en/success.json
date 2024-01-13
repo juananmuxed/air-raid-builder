@@ -2,5 +2,6 @@
   "welcome": "Welcome!",
   "logoutSuccess": "Correctly logout",
   "saveList": "Saved list correctly",
+  "loadList": "Loaded list correctly",
   "copiedClipboard": "Copied URL"
 }

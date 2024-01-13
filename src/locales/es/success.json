@@ -2,5 +2,6 @@
   "welcome": "¡Bienvenido!",
   "logoutSuccess": "Desconectado correctamente",
   "saveList": "Lista guardada correctamente",
+  "loadList": "Lista cargada correctamente",
   "copiedClipboard": "URL Copiada"
 }

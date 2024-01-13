@@ -7,7 +7,8 @@
     "units": "Unidades",
     "availablePlanes": "Aviones disponibles",
     "specialAbilities": "Habilidades especiales",
-    "newList": "Nueva lista {n}"
+    "newList": "Nueva lista {n}",
+    "savedLists": "Listas guardadas"
   },
   "buttons": {
     "createList": "Crear lista",
@@ -16,7 +17,8 @@
     "delete": "Eliminar",
     "print": "Imprimir",
     "copyUrl": "Copiar URL",
-    "allYears": "Todos los años"
+    "allYears": "Todos los años",
+    "loadList": "Cargar lista"
   },
   "paragraphs": {
     "selectNation": "Seleccione una nación para continuar",
